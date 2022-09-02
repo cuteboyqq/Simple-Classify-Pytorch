@@ -10,6 +10,13 @@ in folder model
 # Requirement
 [(Back to top)](#table-of-contents)
 
+
+```
+conda create --name Classify
+```
+```
+conda activate Classify
+```
 ```
 pip install -r requirement.txt
 ```
