@@ -21,7 +21,6 @@ Here is a random GIF as a placeholder.
 - [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
-    - [parameter-setting](#parameter-setting)
     - [Train](#Train)
     - [Test](#Test)
 
@@ -49,11 +48,6 @@ pip install -r requirement.txt
 # Usage
 [(Back to top)](#table-of-contents)
 
-
-## parameter-setting
-[(Back to top)](#table-of-contents)
-
-parameter are set in yaml/train_cfg.yaml  and yaml/inference_cfg.yaml 
 
 ## Train
 [(Back to top)](#table-of-contents)
