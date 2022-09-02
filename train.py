@@ -26,8 +26,6 @@ def get_args():
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
     return parser.parse_args()    
 
-
-
 def train(opts):
     if opts.data=='mnist':
         nc=1
@@ -35,35 +33,24 @@ def train(opts):
         nc=3
     else:
         nc=opts.nc
-  
     model = ResNet(ResBlock,nc=nc)
-   
     if torch.cuda.is_available():
         model.cuda() 
-   
-    
     train_loader,test_loader = load_data(opts)
-    
-    
     '''loss function'''
     criterion = nn.CrossEntropyLoss()
     ''' optimizer method '''
     optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)
-        
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    
     _lowest_loss = 1000.0
-    
     SAVE_MODEL_DIR = r".\runs\train"
     SAVE_MODEL_PATH = r".\runs\train\best.pt"
     if not os.path.exists(SAVE_MODEL_DIR):
         os.makedirs(SAVE_MODEL_DIR)
-    
-    
+        
     for epoch in range(opts.epoch):
         tot_loss = 0.0
         pbar = tqdm(train_loader) #show bar progress
-    
         for i, (inputs, labels) in enumerate(pbar):
             '''get batch images and corresponding labels'''
             inputs, labels = inputs.to(device), labels.to(device)
@@ -77,21 +64,16 @@ def train(opts):
             loss.backward()
             '''optimize weight and bais'''
             optimizer.step()
-            tot_loss += loss.data
-            
+            tot_loss += loss.data   
             '''show pbar messages'''
             bar_str = 'Epoch {}, batch_loss:{}, total_loss:{}'.format(epoch,loss,tot_loss)
             PREFIX = colorstr(bar_str)
-            pbar.desc = f'{PREFIX}'
-            
-            
+            pbar.desc = f'{PREFIX}'                 
         if tot_loss < _lowest_loss:
             _lowest_loss = tot_loss
             print('Start save model !')
             torch.save(model, SAVE_MODEL_PATH)
-            print('save model complete with loss : %.3f' %(tot_loss))
-            
-            
+            print('save model complete with loss : %.3f' %(tot_loss))   
         #get the ac with testdataset in each epoch
         print('Waiting Test...')
         pbar_test = tqdm(test_loader)
@@ -104,21 +86,17 @@ def train(opts):
                 images, labels = data
                 images, labels = images.to(device), labels.to(device)
                 outputs = model(images)
-                
                 loss_test = criterion(outputs, labels)
                 tot_loss_test += loss_test.data
                 _, predicted = torch.max(outputs.data, 1)
                 total += labels.size(0)
                 correct += (predicted == labels).sum()
-                
                 '''show pbar messages'''
                 bar_str = 'Test batch_loss:{}, total_loss:{}'.format(loss_test,tot_loss_test)
                 PREFIX = colorstr(bar_str)
                 pbar_test.desc = f'{PREFIX}'
-                
             print('Test\'s ac is: %.3f%%' % (100 * correct / total))
             
-        
 if __name__ == "__main__":
     opts = get_args()
     train(opts)
