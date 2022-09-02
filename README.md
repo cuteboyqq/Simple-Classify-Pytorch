@@ -7,22 +7,6 @@ in folder model
 3. res2net
 4. VGG
 
-# Requirement
-[(Back to top)](#table-of-contents)
-
-
-```
-conda create --name Classify
-```
-```
-conda activate Classify
-```
-```
-git clone https://github.com/cuteboyqq/Simple-Classify-Pytorch.git
-```
-```
-pip install -r requirement.txt
-```
 
 <!-- Add a demo for your project -->
 
@@ -34,11 +18,32 @@ Here is a random GIF as a placeholder.
 
 # Table of contents
 - [Classify-model](#Classify-model)
+- [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
     - [parameter-setting](#parameter-setting)
     - [Train](#Train)
     - [Test](#Test)
+
+
+# Create-Environment
+[(Back to top)](#table-of-contents)
+
+```
+conda create --name Classify
+```
+```
+conda activate Classify
+```
+```
+git clone https://github.com/cuteboyqq/Simple-Classify-Pytorch.git
+```
+# Requirement
+[(Back to top)](#table-of-contents)
+
+```
+pip install -r requirement.txt
+```
 
 
 # Usage
