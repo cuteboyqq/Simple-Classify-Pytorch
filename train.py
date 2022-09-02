@@ -9,22 +9,12 @@ os.environ["KMP_DUPLICATE_LIB_OK"]  =  "TRUE"
 import torch
 import torch.utils.data
 from torch import nn, optim
-from model.resnet import ResNet, ResBlock
+from models.resnet import ResNet,ResBlock
+from models.repVGG import RepVGG,RepVGGBlock
 from tqdm import tqdm
 from util.colorstr import colorstr
 from util.data_loader import load_data
 
-def get_args():
-    import argparse
-    parser = argparse.ArgumentParser()
-    #'/home/ali/datasets/train_video/NewYork_train/train/images'
-    parser.add_argument('-data','--data',help='train data (mnist, cifar10, custom data)',default=r'cifar10')
-    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'C:\GitHub_Code\cuteboyqq\TLR\datasets\roi-test')
-    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=32)
-    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
-    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
-    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
-    return parser.parse_args()    
 
 def train(opts):
     if opts.data=='mnist':
@@ -33,7 +23,13 @@ def train(opts):
         nc=3
     else:
         nc=opts.nc
-    model = ResNet(ResBlock,nc=nc)
+        
+    #model = VGG() 
+    #model = res2net()   
+    model = RepVGG(num_classes=nc)    
+    #model = ResNet(ResBlock,nc=nc)
+    
+    
     if torch.cuda.is_available():
         model.cuda() 
     train_loader,test_loader = load_data(opts)
@@ -96,7 +92,20 @@ def train(opts):
                 PREFIX = colorstr(bar_str)
                 pbar_test.desc = f'{PREFIX}'
             print('Test\'s ac is: %.3f%%' % (100 * correct / total))
-            
+
+
+def get_args():
+    import argparse
+    parser = argparse.ArgumentParser()
+    #'/home/ali/datasets/train_video/NewYork_train/train/images'
+    parser.add_argument('-data','--data',help='train data (mnist, cifar10, custom data)',default=r'cifar10')
+    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'C:\GitHub_Code\cuteboyqq\TLR\datasets\roi-test')
+    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=32)
+    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
+    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
+    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
+    return parser.parse_args()    
+
 if __name__ == "__main__":
     opts = get_args()
     train(opts)
