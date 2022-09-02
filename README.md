@@ -17,7 +17,7 @@ Here is a random GIF as a placeholder.
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) -->
 
 # Table of contents
-- [Classify-model](#Classify-model)
+- [Classify-model-Pytorch](#Classify-model-Pytorch)
 - [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
