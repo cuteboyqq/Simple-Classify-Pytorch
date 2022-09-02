@@ -18,6 +18,9 @@ conda create --name Classify
 conda activate Classify
 ```
 ```
+git clone https://github.com/cuteboyqq/Simple-Classify-Pytorch.git
+```
+```
 pip install -r requirement.txt
 ```
 
