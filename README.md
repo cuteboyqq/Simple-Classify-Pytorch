@@ -1,4 +1,4 @@
-# Classify-model 
+# Classify-model-Pytorch
 [(Back to top)](#table-of-contents)
 
 in folder model
