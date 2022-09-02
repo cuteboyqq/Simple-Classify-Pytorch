@@ -7,8 +7,12 @@ in folder model
 3. res2net
 4. VGG
 
-# Demo-Preview
+# Requirement
 [(Back to top)](#table-of-contents)
+
+```
+pip install -r requirement.txt
+```
 
 <!-- Add a demo for your project -->
 
@@ -20,7 +24,7 @@ Here is a random GIF as a placeholder.
 
 # Table of contents
 - [Classify-model](#Classify-model)
-- [Demo-Preview](#demo-preview)
+- [Requirement](#Requirement)
 - [Usage](#usage)
     - [parameter-setting](#parameter-setting)
     - [Train](#Train)
