@@ -1,7 +1,7 @@
 # Classify-model 
 [(Back to top)](#table-of-contents)
 
-in folder network
+in folder model
 1. resnet
 2. repVGG
 3. res2net
