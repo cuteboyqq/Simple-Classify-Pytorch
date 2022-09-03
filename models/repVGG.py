@@ -150,7 +150,7 @@ class RepVGGBlock(nn.Module):
 
 class RepVGG(nn.Module):
 
-    def __init__(self, num_blocks, num_classes=10, width_multiplier=None, override_groups_map=None, deploy=False, use_se=False):
+    def __init__(self, num_blocks=[2,4,7,1], num_classes=10, width_multiplier=[16,32,64,128], override_groups_map=None, deploy=False, use_se=False):
         super(RepVGG, self).__init__()
 
         assert len(width_multiplier) == 4

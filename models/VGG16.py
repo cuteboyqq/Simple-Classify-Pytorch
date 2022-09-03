@@ -33,8 +33,9 @@ class VGG16(nn.Module):
         self.conv5_3 = nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, padding=1)
 
         self.maxpool = nn.MaxPool2d(kernel_size=2, stride=2)
-
-        self.fc1 = nn.Linear(25088, 4096)
+        
+        self.flatten = nn.Flatten()
+        self.fc1 = nn.Linear(512, 4096)#25088
         self.fc2 = nn.Linear(4096, 4096)
         self.fc3 = nn.Linear(4096, 10)
 

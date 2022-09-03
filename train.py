@@ -11,6 +11,8 @@ import torch.utils.data
 from torch import nn, optim
 from models.resnet import ResNet,ResBlock
 from models.repVGG import RepVGG,RepVGGBlock
+from models.res2net import Res2Net,Bottle2neck
+from models.VGG16 import VGG16
 from tqdm import tqdm
 from util.colorstr import colorstr
 from util.data_loader import load_data
@@ -30,10 +32,10 @@ def main(opts):
         nc=opts.nc
         
     '''load Convolution Neural Network'''
-    #model = VGG() 
-    #model = res2net()   
-    #model = RepVGG(num_classes=nc)    
-    model = ResNet(ResBlock,nc=nc)
+    #model = VGG16() 
+    model = Res2Net()   
+    #model = RepVGG(num_classes=10)    
+    #model = ResNet(ResBlock,nc=nc)
     '''load data'''
     train_loader,test_loader = load_data(opts)
     '''Start train/test epochs and save best.pt model'''
