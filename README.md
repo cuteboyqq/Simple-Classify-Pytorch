@@ -1,4 +1,4 @@
-### Classify-model-Pytorch
+### Classify-model-Pytorch (MNIST,CIFAR10,CUSTOM DATASET)
 [(Back to top)](#table-of-contents)
 
 in folder model
