@@ -32,12 +32,18 @@ def main(opts):
         nc=opts.nc
         
     '''load Convolution Neural Network'''
-    #model = VGG16() 
-    model = Res2Net()   
-    #model = RepVGG(num_classes=10)    
-    #model = ResNet(ResBlock,nc=nc)
+    if opts.model=='resnet' or opts.model=='Resnet' or opts.model=='ResNet':
+        model = ResNet(ResBlock,nc=nc)
+    elif opts.model=='repvgg' or opts.model=='RepVGG' or opts.model=='Repvgg' or opts.model=='RepVgg':
+        model = RepVGG(num_classes=10)
+    elif opts.model=='vgg16' or opts.model=='VGG16' or opts.model=='Vgg16':
+        model = VGG16()
+    elif opts.model=='res2net' or opts.model=='Res2net' or opts.model=='Res2Net':
+        model = Res2Net()  
+    
     '''load data'''
     train_loader,test_loader = load_data(opts)
+    print('model :{}'.format(opts.model))
     '''Start train/test epochs and save best.pt model'''
     train(model,train_loader,test_loader,opts)
     
@@ -128,6 +134,7 @@ def get_args():
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     return parser.parse_args()    
 
 if __name__ == "__main__":
