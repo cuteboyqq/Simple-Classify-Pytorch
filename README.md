@@ -52,10 +52,9 @@ pip install -r requirement.txt
 ### Train
 [(Back to top)](#table-of-contents)
 ```
-python train.py 
+python train.py --data cifar10 --img-size 32 --batch-size 64 --nc 3
 ```
 ### Test
 [(Back to top)](#table-of-contents)
-```
-python test.py 
-```
+
+not implement....maybe implement in the future
