@@ -34,7 +34,7 @@ def main(opts):
     '''load Convolution Neural Network'''
     if opts.model=='resnet' or opts.model=='Resnet' or opts.model=='ResNet':
         model = ResNet(ResBlock,nc=nc)
-    elif opts.model=='repvgg' or opts.model=='RepVGG' or opts.model=='Repvgg' or opts.model=='RepVgg':
+    elif opts.model=='repvgg' or opts.model=='RepVGG' or opts.model=='Repvgg' or opts.model=='RepVgg' or opts.model=='repVgg' or opts.model=='repVGG':
         model = RepVGG(num_classes=10)
     elif opts.model=='vgg16' or opts.model=='VGG16' or opts.model=='Vgg16':
         model = VGG16()
@@ -134,7 +134,7 @@ def get_args():
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='repVGG')
     return parser.parse_args()    
 
 if __name__ == "__main__":
