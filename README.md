@@ -59,7 +59,7 @@ pip install -r requirement.txt
 ### Train
 [(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 ```
-python train.py --data [enter open datasets name(Ex:mnist,cifar10) or custom dataset directory] 
+python train.py --data [Enter open datasets name(Ex:mnist,cifar10) or custom dataset directory] 
                 --img-size [Enter image size (Ex:32 or 64 or 128)] 
                 --batch-size [Enter batch size (Ex:32 or 64 or 128)] 
                 --nc [Enter number of channels (Ex:1 or 3)] 
