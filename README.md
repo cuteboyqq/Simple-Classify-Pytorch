@@ -58,7 +58,7 @@ pip install -r requirement.txt
 ### Train
 [(Back to top)](#table-of-contents)
 ```
-python train.py --data cifar10 --img-size 32 --batch-size 64 --nc 3
+python train.py --data cifar10 --img-size 32 --batch-size 64 --nc 3 --model resnet
 ```
 ### Test
 [(Back to top)](#table-of-contents)
