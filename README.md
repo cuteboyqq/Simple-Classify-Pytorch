@@ -1,4 +1,4 @@
-### Classify-model-Pytorch (MNIST,CIFAR10,CUSTOM DATASET)
+### Classify-model-Pytorch-(MNIST,CIFAR10,CUSTOM DATASET)
 [(Back to top)](#table-of-contents)
 
 model includes :
@@ -23,7 +23,7 @@ Here is a random GIF as a placeholder.
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) -->
 
 ### table-of-contents
-- [Classify-model-Pytorch](#Classify-model-Pytorch)
+- [Classify-model-Pytorch](#Classify-model-Pytorch-(MNIST,CIFAR10,CUSTOM DATASET))
 - [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
