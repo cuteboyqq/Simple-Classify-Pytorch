@@ -33,7 +33,7 @@ Here is a random GIF as a placeholder.
 
 
 ### Create-Environment
-[(Back to top)](#table-of-contents)
+[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
 ```
 conda create --name Classify
@@ -45,7 +45,7 @@ conda activate Classify
 git clone https://github.com/cuteboyqq/Simple-Classify-Pytorch.git
 ```
 ### Requirement
-[(Back to top)](#table-of-contents)
+[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
 ```
 pip install -r requirement.txt
@@ -53,11 +53,11 @@ pip install -r requirement.txt
 
 
 ### Usage
-[(Back to top)](#table-of-contents)
+[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
 
 ### Train
-[(Back to top)](#table-of-contents)
+[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 ```
 python train.py --data [enter open datasets name(Ex:mnist,cifar10) or custom dataset directory] 
                 --img-size [Enter image size (Ex:32 or 64 or 128)] 
@@ -77,6 +77,6 @@ python train.py --data mnist --img-size 32 --batch-size 64  --model ShuffleNetV2
 python train.py --data [Enter custom dataset directory] --img-size 32 --batch-size 64  --model  MobileNetV2
 ```
 ### Test
-[(Back to top)](#table-of-contents)
+[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
 not implement....maybe implement in the future
