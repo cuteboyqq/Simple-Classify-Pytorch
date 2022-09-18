@@ -26,7 +26,7 @@ def get_args():
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=128)
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='efficientnet')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
@@ -58,14 +58,14 @@ if torch.cuda.is_available():
 optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)
 
 os.makedirs(r".\runs\train", exist_ok=True)
-SAVE_MODEL_PATH = r".\runs\train\best.pt"
 
+_lowest_loss = 1000.0
 #--------------------------------------------------------------------------------------------
 def train(epoch):
-    _lowest_loss = 1000.0
+    global _lowest_loss
     #for epoch in range(opts.epoch):
     print('{}{:4}{}{:4}{}{:4}{}{:4}{}{:4}{}{:4}{}{:4}{}'.format('Epoch','','Total_loss','','loss','','acc','','img_size','','bs','','model','','data'))
-    print('-----------------------------------------------------------------------------')
+    #print('-----------------------------------------------------------------------------')
     tot_loss = 0.0
     pbar = tqdm(train_loader) #show bar progress
     for i, (inputs, labels) in enumerate(pbar):              
@@ -90,9 +90,8 @@ def train(epoch):
         pbar.desc = f'{PREFIX}'                 
     if tot_loss < _lowest_loss:
         _lowest_loss = tot_loss
-        #print('Start save model !')
-        torch.save(model, SAVE_MODEL_PATH)
-        #print('save model complete with loss : %.3f' %(tot_loss))       
+        model_name =  opts.model + "_best.pt"
+        torch.save(model, os.path.join(r"./runs/train",model_name))
 #------------------------------------------------------------------------------------------------------------
 def test():
     #get the ac with testdataset in each epoch
