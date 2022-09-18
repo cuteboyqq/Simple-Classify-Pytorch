@@ -58,7 +58,22 @@ pip install -r requirement.txt
 ### Train
 [(Back to top)](#table-of-contents)
 ```
+python train.py --data [enter open datasets name(ex:mnist,cifar10) or custom dataset directory] 
+                --img-size [Enter image size (ex:32 or 64 or 128)] 
+                --batch-size [Enter batch size (ex:32 or 64 or 128)] 
+                --nc [Enter number of channels (ex:1 or 3)] 
+                --model [Enter model name (ex:resnet,mobilenetv2,shufflenetv2,etcs)]
+```
+For examples :
+```
 python train.py --data cifar10 --img-size 32 --batch-size 64 --nc 3 --model resnet
+```
+```
+python train.py --data mnist --img-size 32 --batch-size 64  --model ShuffleNetV2
+```
+
+```
+python train.py --data [Enter custom dataset directory] --img-size 32 --batch-size 64  --model  MobileNetV2
 ```
 ### Test
 [(Back to top)](#table-of-contents)
