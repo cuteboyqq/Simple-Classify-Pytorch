@@ -1,12 +1,18 @@
 ### Classify-model-Pytorch (MNIST,CIFAR10,CUSTOM DATASET)
 [(Back to top)](#table-of-contents)
 
-in folder model
+model includes :
 1. resnet
 2. repVGG
 3. res2net
 4. VGG
-
+5. shufflenet (2022/09/18 have train error)
+6. EfficientNet
+7. MobileNet (2022/09/18 have train error)
+8. MobileNetV2
+9. LeNet
+10. DenseNet
+11. ShuffleNetV2
 
 <!-- Add a demo for your project -->
 
