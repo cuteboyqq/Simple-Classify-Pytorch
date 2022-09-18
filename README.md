@@ -1,6 +1,6 @@
 
 # Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET
-[(Back to top)](#table-of-contents)
+[(Back to table)](#table-of-contents)
 
 model includes :
 1. [resnet](models/resnet.py)
