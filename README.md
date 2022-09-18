@@ -1,5 +1,5 @@
 
-## Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET
+# Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET
 [(Back to top)](#table-of-contents)
 
 model includes :
