@@ -1,3 +1,11 @@
+### table-of-contents
+- [Classify-model-Pytorch](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+- [Create-Environment](#Create-Environment)
+- [Requirement](#Requirement)
+- [Usage](#usage)
+    - [Train](#Train)
+    - [Test](#Test)
+
 ### Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET
 [(Back to top)](#table-of-contents)
 
@@ -22,13 +30,7 @@ Here is a random GIF as a placeholder.
 
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) -->
 
-### table-of-contents
-- [Classify-model-Pytorch](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
-- [Create-Environment](#Create-Environment)
-- [Requirement](#Requirement)
-- [Usage](#usage)
-    - [Train](#Train)
-    - [Test](#Test)
+
 
 
 ### Create-Environment
