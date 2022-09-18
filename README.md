@@ -3,16 +3,16 @@
 
 model includes :
 1. [resnet](models/resnet.py)
-2. repVGG
-3. res2net
-4. VGG
-5. shufflenet (2022/09/18 have train error)
-6. EfficientNet
-7. MobileNet (2022/09/18 have train error)
-8. MobileNetV2
-9. LeNet
-10. DenseNet
-11. ShuffleNetV2
+2. [repVGG](models/repVGG.py)
+3. [res2net](models/res2net.py)
+4. [VGG16](models/VGG16.py)
+5. [shufflenet](models/shufflenet.py) 
+6. [EfficientNet](models/efficientnet.py) 
+7. [MobileNet](models/mobilenet.py)
+8. [MobileNetV2](models/mobilenetv2.py)
+9. [LeNet](models/lenet.py)
+10. [DenseNet](models/densenet.py)
+11. [ShuffleNetV2](models/shufflenetv2.py)
 
 <!-- Add a demo for your project -->
 
