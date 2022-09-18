@@ -2,7 +2,7 @@
 [(Back to top)](#table-of-contents)
 
 model includes :
-1. [(resnet)](#models/resnet.py)
+1. [resnet](models/resnet.py)
 2. repVGG
 3. res2net
 4. VGG
