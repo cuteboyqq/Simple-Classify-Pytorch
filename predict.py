@@ -20,35 +20,21 @@ def get_args():
     import argparse
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
-    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'/home/jnr_loganvo/Alister/datasets/landmark')
     parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'/home/jnr_loganvo/Alister/datasets/landmark')
     parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=64)
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
-    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
-    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
     parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     parser.add_argument('-mpath','--model-path',help='pretrained model path',default=r'/home/jnr_loganvo/Alister/GitHub_Code/Simple-Classify-Pytorch/runs/train/resnet_best.pt')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
 
-
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-
 opts = get_args()
-''' Load data (ex:mnist, cifar10, or custom dataset)'''
-train_loader,test_loader = load_data(opts)
 
-if opts.data=='mnist':
-    nc=1
-elif opts.data=='cifar10':
-    nc=3
-else:
-    nc=opts.nc
-    
 '''   Load specific model (ex: resnet, repVGG,etcs1)'''
-model = load_model(opts,nc) #For example : model = ResNet(ResBlock,nc=nc)
+model = load_model(opts,opts.nc) #For example : model = ResNet(ResBlock,nc=nc)
 print('model :{}'.format(opts.model))
 
 #model.load_state_dict(torch.load(opts.model_path)) #load pre-trained model
@@ -80,27 +66,23 @@ def predict():
     with torch.no_grad():
         for pred_img_path in predict_img_list:
             model.eval()
-            # READ IMAGE
-            image_sample =  Image.open(pred_img_path)
-
+            img =  Image.open(pred_img_path)# READ IMAGE
             # DEFINE TRANSFORMS
             # normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
             #                                 std=[0.229, 0.224, 0.225])
-            preprocessing = transforms.Compose([
+            pre_process = transforms.Compose([
                 transforms.Resize(opts.img_size),
                 transforms.RandomHorizontalFlip(),
-                #transforms.Scale(64),
                 transforms.CenterCrop(opts.img_size),
                 transforms.ToTensor()
                 #normalize
                 ])
-            transformed_sample = preprocessing(image_sample)
-            transformed_sample = transformed_sample.view([1,3,opts.img_size,opts.img_size])
-            predict = model(transformed_sample)
-            predicted_class = predict.argmax() #get the max score label
-            print("predict result : {}".format(class_dict[int(predicted_class.numpy())]))
-            #if int(predicted_class.numpy()) == 0:
-            shutil.copy(pred_img_path,"./runs/predict/"+str(int(predicted_class.numpy())))
+            trans_img = pre_process(img)
+            trans_img = trans_img.view([1,opts.nc,opts.img_size,opts.img_size])
+            pred = model(trans_img)
+            pred_cls = pred.argmax() #get the max score label
+            print("predict result : {}".format(class_dict[int(pred_cls.numpy())]))
+            shutil.copy(pred_img_path,"./runs/predict/"+str(int(pred_cls.numpy())))
             
             
 if __name__ == "__main__":
