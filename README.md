@@ -29,7 +29,7 @@ Here is a random GIF as a placeholder.
 - [Requirement](#Requirement)
 - [Usage](#usage)
     - [Train](#Train)
-    - [Test](#Test)
+    - [Predict](#Predict)
 
 
 ### Create-Environment
@@ -79,7 +79,6 @@ python train.py --data [Enter custom dataset directory] --img-size 32 --batch-si
 ### Predict
 [(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
-[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 ```
 python predict.py --data-test [predict data directory] 
                 --img-size [Enter image size (Ex:32 or 64 or 128)] 
