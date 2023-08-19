@@ -76,7 +76,18 @@ python train.py --data mnist --img-size 32 --batch-size 64  --model ShuffleNetV2
 ```
 python train.py --data [Enter custom dataset directory] --img-size 32 --batch-size 64  --model  MobileNetV2
 ```
-### Test
+### Predict
 [(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
-not implement....maybe implement in the future
+[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+```
+python predict.py --data-test [predict data directory] 
+                --img-size [Enter image size (Ex:32 or 64 or 128)] 
+                --nc [Enter number of channels (Ex:1 or 3)] 
+                --model [Enter model name (Ex:resnet,mobilenetv2,shufflenetv2,etcs)]
+                --model-path [Enter the path of model.pt(Ex:/path/to/your/runs/train/resnet_best.pt)]
+```
+For examples :
+```
+python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/runs/train/resnet_best.pt]
+```
