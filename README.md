@@ -61,6 +61,8 @@ pip install -r requirement.txt
 
 ### Train
 [(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+
+user can train classify model by cifar/mnist/custom datasets, command is below
 ```
 python train.py --data [Enter open datasets name(Ex:mnist,cifar10) or custom dataset directory] 
                 --img-size [Enter image size (Ex:32 or 64 or 128)] 
@@ -82,6 +84,7 @@ python train.py --data [Enter custom dataset directory] --img-size 32 --batch-si
 ### Predict
 [(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
 
+after training done, you will have model at folder ./runs/train/ , so use this model to predict images and will save predict result image
 ```
 python predict.py --data-test [predict data directory] 
                 --img-size [Enter image size (Ex:32 or 64 or 128)] 
