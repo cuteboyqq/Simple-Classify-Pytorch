@@ -2,7 +2,7 @@
 # Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET
 [(Back to table)](#table-of-contents)
 
-### 2023-08-19 add predict.py code [updates]
+### 2023-08-19 add predict.py code
 
 model includes :
 1. [resnet](models/resnet.py)
