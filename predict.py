@@ -13,7 +13,10 @@ from util.load_model import load_model
 from tqdm import tqdm
 from util.colorstr import colorstr
 from util.data_loader import load_data
-
+import glob
+from PIL import Image
+import torchvision.transforms as transforms
+import shutil
 
 
 def get_args():
@@ -34,25 +37,29 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 opts = get_args()
 
 '''   Load specific model (ex: resnet, repVGG,etcs1)'''
-model = load_model(opts,opts.nc) #For example : model = ResNet(ResBlock,nc=nc)
-print('model :{}'.format(opts.model))
+#model = load_model(opts,opts.nc) #For example : model = ResNet(ResBlock,nc=nc)
+#print('model :{}'.format(opts.model))
 
 #model.load_state_dict(torch.load(opts.model_path)) #load pre-trained model
 model = torch.load(opts.model_path)
 
 if torch.cuda.is_available():
     model.cuda()
-    
+
+pre_process = transforms.Compose([
+                transforms.Resize(opts.img_size),
+                transforms.RandomHorizontalFlip(),
+                transforms.CenterCrop(opts.img_size),
+                transforms.ToTensor()
+                #normalize
+                ])
+
 os.makedirs(r".\runs\predict", exist_ok=True)
 
 _lowest_loss = 1000.0
 #--------------------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------------------------------
-import glob
-from PIL import Image
-import torchvision.transforms as transforms
-import shutil
 #study how to imfer one image https://medium.com/@myravithar/deriving-inference-for-new-images-using-pretrained-models-in-pytorch-8e294351c5a4
 def predict():
     #get the ac with testdataset in each epoch
@@ -70,13 +77,6 @@ def predict():
             # DEFINE TRANSFORMS
             # normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
             #                                 std=[0.229, 0.224, 0.225])
-            pre_process = transforms.Compose([
-                transforms.Resize(opts.img_size),
-                transforms.RandomHorizontalFlip(),
-                transforms.CenterCrop(opts.img_size),
-                transforms.ToTensor()
-                #normalize
-                ])
             trans_img = pre_process(img)
             trans_img = trans_img.view([1,opts.nc,opts.img_size,opts.img_size])
             pred = model(trans_img)
