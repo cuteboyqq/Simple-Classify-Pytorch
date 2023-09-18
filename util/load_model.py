@@ -15,6 +15,8 @@ from models.mobilenetv2 import *
 from models.lenet import *
 from models.densenet import *
 from models.shufflenetv2 import *
+from models.vit import *
+from linformer import Linformer
 
 def load_model(opts,nc):
     if opts.model=='resnet' or opts.model=='Resnet' or opts.model=='ResNet':
@@ -39,5 +41,17 @@ def load_model(opts,nc):
         model = densenet_cifar()
     elif opts.model=='ShuffleNetV2' or opts.model=='shuffleNetV2' or opts.model=='shufflenetV2' or opts.model=='shufflenetv2':
         model = ShuffleNetV2(net_size=0.5)
+    elif opts.model=='vit' or opts.model=='Vit' or opts.model=='VIT':
+        model = ViT(
+                    image_size = 256,
+                    patch_size = 32,
+                    num_classes = nc,
+                    dim = 1024,
+                    depth = 6,
+                    heads = 16,
+                    mlp_dim = 2048,
+                    dropout = 0.1,
+                    emb_dropout = 0.1
+                    )
         
     return model
