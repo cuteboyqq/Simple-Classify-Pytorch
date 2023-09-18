@@ -16,6 +16,7 @@ from models.lenet import *
 from models.densenet import *
 from models.shufflenetv2 import *
 from models.vit import *
+from models.simple_vit import *
 from linformer import Linformer
 
 def load_model(opts,nc):
@@ -43,15 +44,24 @@ def load_model(opts,nc):
         model = ShuffleNetV2(net_size=0.5)
     elif opts.model=='vit' or opts.model=='Vit' or opts.model=='VIT':
         model = ViT(
-                    image_size = 256,
-                    patch_size = 32,
+                    image_size = opts.img_size,
+                    patch_size = 16,
                     num_classes = nc,
-                    dim = 1024,
+                    dim = 512,
                     depth = 6,
                     heads = 16,
-                    mlp_dim = 2048,
+                    mlp_dim = 1024,
                     dropout = 0.1,
                     emb_dropout = 0.1
                     )
-        
+    elif opts.model=='simple-vit' or opts.model=='simple-Vit' or opts.model=='simple-VIT' or opts.model=='Simple-VIT' or opts.model=='Simple-Vit':
+        model = SimpleViT(
+                            image_size = 256,
+                            patch_size = 32,
+                            num_classes = nc,
+                            dim = 1024,
+                            depth = 6,
+                            heads = 16,
+                            mlp_dim = 2048
+                        )
     return model
