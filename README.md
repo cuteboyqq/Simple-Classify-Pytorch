@@ -2,6 +2,7 @@
 # Classify-model-Pytorch-MNIST-CIFAR10-CUSTOM-DATASET
 [(Back to table)](#table-of-contents)
 
+### [2023-09-18] add model vit at model/vit.py code
 ### [2023-08-19] add predict.py code
 you can use various network to train classify model, and l want the train and predict code as simple as possible
 
