@@ -3,6 +3,7 @@
 [(Back to table)](#table-of-contents)
 
 ### [2023-09-18] add model vit at model/vit.py code
+#### Vit code is ref. from :  https://github.com/lucidrains/vit-pytorch/tree/main
 ### [2023-08-19] add predict.py code
 you can use various network to train classify model, and l want the train and predict code as simple as possible
 
