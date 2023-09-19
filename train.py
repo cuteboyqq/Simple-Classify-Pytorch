@@ -20,13 +20,13 @@ def get_args():
     import argparse
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
-    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'cifar10')
-    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'C:\GitHub_Code\cuteboyqq\TLR\datasets\roi-test')
-    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=32)
+    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'/home/ali/Projects/datasets/landmark/train')
+    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'/home/ali/Projects/datasets/landmark/test')
+    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=128)
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
-    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=128)
+    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='efficientnet')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='simple-vit')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
@@ -57,7 +57,7 @@ if torch.cuda.is_available():
     
 optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)
 
-os.makedirs(r".\runs\train", exist_ok=True)
+os.makedirs(r"./runs/train", exist_ok=True)
 
 _lowest_loss = 1000.0
 #--------------------------------------------------------------------------------------------
