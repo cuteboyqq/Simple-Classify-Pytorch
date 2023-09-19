@@ -19,6 +19,8 @@ from models.vit import *
 from models.simple_vit import *
 from models.cct import CCT
 from models.cct import *
+from models.na_vit import *
+from models.cait import *
 from linformer import Linformer
 
 def load_model(opts,nc):
@@ -68,19 +70,46 @@ def load_model(opts,nc):
                         )
     elif opts.model=='cct' or opts.model=='CCT':
         model = CCT(
-                            img_size = (opts.img_size,opts.img_size),
-                            embedding_dim = 384,
-                            n_conv_layers = 2,
-                            kernel_size = 7,
-                            stride = 2,
-                            padding = 3,
-                            pooling_kernel_size = 3,
-                            pooling_stride = 2,
-                            pooling_padding = 1,
-                            num_layers = 14,
-                            num_heads = 6,
-                            mlp_ratio = 3.,
-                            num_classes = 3,
-                            positional_embedding = 'learnable', # ['sine', 'learnable', 'none']
-)
+                    img_size = (opts.img_size,opts.img_size),
+                    embedding_dim = 384,
+                    n_conv_layers = 2,
+                    kernel_size = 7,
+                    stride = 2,
+                    padding = 3,
+                    pooling_kernel_size = 3,
+                    pooling_stride = 2,
+                    pooling_padding = 1,
+                    num_layers = 14,
+                    num_heads = 6,
+                    mlp_ratio = 3.,
+                    num_classes = 3,
+                    positional_embedding = 'learnable', # ['sine', 'learnable', 'none']
+                    )
+    elif opts.model=='na-vit' or opts.model=='NaViT' or opts.model=='navit':
+        model = NaViT(
+                    image_size = opts.img_size,
+                    patch_size = 32,
+                    num_classes = 3,
+                    dim = 512,
+                    depth = 6,
+                    heads = 16,
+                    mlp_dim = 1024,
+                    dropout = 0.1,
+                    emb_dropout = 0.1,
+                    token_dropout_prob = 0.1  # token dropout of 10% (keep 90% of tokens)
+                    )
+    elif opts.model=='CaiT' or opts.model=='cait' or opts.model=='CAIT':
+        model = CaiT(
+                    image_size = opts.img_size,
+                    patch_size = 32,
+                    num_classes = 3,
+                    dim = 512,
+                    depth = 12,             # depth of transformer for patch to patch attention only
+                    cls_depth = 2,          # depth of cross attention of CLS tokens to patch
+                    heads = 16,
+                    mlp_dim = 1024,
+                    dropout = 0.1,
+                    emb_dropout = 0.1,
+                    layer_dropout = 0.05    # randomly dropout 5% of the layers
+                )
     return model
