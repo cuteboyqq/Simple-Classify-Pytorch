@@ -19,6 +19,8 @@ model includes :
 10. [DenseNet](models/densenet.py)
 11. [ShuffleNetV2](models/shufflenetv2.py)
 12. [Vit](models/vit.py)
+13. [Cait](models/cait.py)
+14. [cct](models/cct.py)
 
 <!-- Add a demo for your project -->
 
