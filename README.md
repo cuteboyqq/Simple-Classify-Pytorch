@@ -21,6 +21,7 @@ model includes :
 12. [Vit](models/vit.py)
 13. [Cait](models/cait.py)
 14. [cct](models/cct.py)
+15. [simple-vit](models/simple_vit.py)
 
 <!-- Add a demo for your project -->
 
