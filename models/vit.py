@@ -109,7 +109,7 @@ class ViT(nn.Module):
         self.to_latent = nn.Identity()
 
         self.mlp_head = nn.Linear(dim, num_classes)
-
+        
     def forward(self, img):
         x = self.to_patch_embedding(img)
         b, n, _ = x.shape
