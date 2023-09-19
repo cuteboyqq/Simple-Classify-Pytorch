@@ -17,6 +17,8 @@ from models.densenet import *
 from models.shufflenetv2 import *
 from models.vit import *
 from models.simple_vit import *
+from models.cct import CCT
+from models.cct import *
 from linformer import Linformer
 
 def load_model(opts,nc):
@@ -46,7 +48,7 @@ def load_model(opts,nc):
         model = ViT(
                     image_size = opts.img_size,
                     patch_size = 16,
-                    num_classes = nc,
+                    num_classes = 3,
                     dim = 512,
                     depth = 6,
                     heads = 16,
@@ -64,4 +66,21 @@ def load_model(opts,nc):
                             heads = 16,
                             mlp_dim = 2048
                         )
+    elif opts.model=='cct' or opts.model=='CCT':
+        model = CCT(
+                            img_size = (opts.img_size,opts.img_size),
+                            embedding_dim = 384,
+                            n_conv_layers = 2,
+                            kernel_size = 7,
+                            stride = 2,
+                            padding = 3,
+                            pooling_kernel_size = 3,
+                            pooling_stride = 2,
+                            pooling_padding = 1,
+                            num_layers = 14,
+                            num_heads = 6,
+                            mlp_ratio = 3.,
+                            num_classes = 3,
+                            positional_embedding = 'learnable', # ['sine', 'learnable', 'none']
+)
     return model
