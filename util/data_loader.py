@@ -40,7 +40,10 @@ def load_data(opts):
         test_loader = torch.utils.data.DataLoader(torchvision.datasets.CIFAR10(root='../data', train=False, download=True, transform=transform_test),
                                                  batch_size=batch_size, shuffle=False, num_workers=1)
     else: #custom datasets
-        size = (opts.img_size,opts.img_size)
+        if not opts.img_w==None and not opts.img_h==None:
+            size = (opts.img_h,opts.img_w)
+        else:
+            size = (opts.img_size,opts.img_size)
         train_data = torchvision.datasets.ImageFolder(opts.data,
                                                     transform=transforms.Compose([
                                                         transforms.Resize(size),
