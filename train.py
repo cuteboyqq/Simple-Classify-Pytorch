@@ -20,13 +20,15 @@ def get_args():
     import argparse
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
-    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'/home/ali/Projects/datasets/landmark/train')
-    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'/home/ali/Projects/datasets/landmark/test')
-    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=128)
+    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/train')
+    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/val')
+    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=64)
+    parser.add_argument('-imgw','--img-w',type=int,help='image width',default=64)
+    parser.add_argument('-imgh','--img-h',type=int,help='image height',default=640)
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
-    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='simple-vit')
+    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=50)
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
@@ -78,11 +80,15 @@ def train(epoch):
         
         tot_loss += loss.data   
         '''show pbar messages'''
+        if opts.img_w is not None and opts.img_h is not None:
+            img_size = (opts.img_h,opts.img_w)
+        else:
+            img_size = opts.img_size
         bar_str =   ' '+ "{0:.3f}".format(epoch)\
                       + '      ' + "{0:.3f}".format(tot_loss)\
                       + '      ' + "{0:.3f}".format(loss)\
                       + '      ' \
-                      + '      ' + "{}".format(opts.img_size)\
+                      + '      ' + "{}".format(img_size)\
                       + '      ' + "{}".format(opts.batch_size)\
                       + '      ' + "{}".format(opts.model)\
                       + '      ' + "{}".format(opts.data)
