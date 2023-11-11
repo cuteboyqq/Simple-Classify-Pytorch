@@ -68,3 +68,26 @@ def load_data(opts):
         test_loader  = torch.utils.data.DataLoader(test_data, batch_size=batch_size,shuffle=False,drop_last=False)
     
     return train_loader,test_loader
+
+
+def load_data_predict(opts):
+    if not opts.img_w==None and not opts.img_h==None:
+            size = (opts.img_h,opts.img_w)
+    else:
+        size = (opts.img_size,opts.img_size)
+
+    predict_data = torchvision.datasets.ImageFolder(opts.data_predict,
+                                                transform=transforms.Compose([
+                                                    transforms.Resize(size),
+                                                    #transforms.RandomHorizontalFlip(),
+                                                    #transforms.Scale(64),
+                                                    transforms.CenterCrop(size),
+                                                    
+                                                    transforms.ToTensor()
+                                                    ])
+                                                )
+    
+    
+    predict_loader  = torch.utils.data.DataLoader(predict_data, batch_size=1,shuffle=False,drop_last=False)
+    
+    return predict_loader
