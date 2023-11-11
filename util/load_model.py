@@ -7,6 +7,7 @@ Created on Sun Sep 18 11:06:04 2022
 from models.resnet import ResNet,ResBlock
 from models.repVGG import RepVGG,RepVGGBlock
 from models.res2net import Res2Net,Bottle2neck
+from models.resnext import ResNeXt
 from models.VGG16 import VGG16
 from models.shufflenet import *
 from models.efficientnet import *
@@ -24,6 +25,13 @@ from models.cait import *
 from linformer import Linformer
 
 def load_model(opts,nc):
+    if opts.img_w is not None and opts.img_h is not None:
+        im_size = (opts.img_h,opts.img_w)
+    else:
+        im_size = opts.img_size
+     
+    print(f"im_size:{im_size}")
+
     if opts.model=='resnet' or opts.model=='Resnet' or opts.model=='ResNet':
         model = ResNet(ResBlock,nc=nc)
     elif opts.model=='repvgg' or opts.model=='RepVGG' or opts.model=='Repvgg' or opts.model=='RepVgg' or opts.model=='repVgg' or opts.model=='repVGG':
@@ -31,7 +39,12 @@ def load_model(opts,nc):
     elif opts.model=='vgg16' or opts.model=='VGG16' or opts.model=='Vgg16':
         model = VGG16()
     elif opts.model=='res2net' or opts.model=='Res2net' or opts.model=='Res2Net':
-        model = Res2Net() 
+        model = Res2Net(num_classes=opts.num_cls)
+    elif opts.model=='resnext' or opts.model=='ResNext' or opts.model=='Resnext' or opts.model=='ResNeXt':
+        model = ResNeXt(num_blocks=[3,3,3], 
+                        cardinality=8, 
+                        bottleneck_width=64, 
+                        num_classes=opts.num_cls)
     elif opts.model=='shufflenet' or opts.model=='ShuffleNet' or opts.model=='shuffleNet':
         model = ShuffleNetG2()
     elif opts.model=='EfficientNet' or opts.model=='efficientNet' or opts.model=='efficientnet':
@@ -50,7 +63,7 @@ def load_model(opts,nc):
         model = ViT(
                     image_size = opts.img_size,
                     patch_size = 16,
-                    num_classes = 3,
+                    num_classes = opts.num_cls,
                     dim = 512,
                     depth = 6,
                     heads = 16,
@@ -60,9 +73,9 @@ def load_model(opts,nc):
                     )
     elif opts.model=='simple-vit' or opts.model=='simple-Vit' or opts.model=='simple-VIT' or opts.model=='Simple-VIT' or opts.model=='Simple-Vit':
         model = SimpleViT(
-                            image_size = 256,
+                            image_size = im_size,
                             patch_size = 32,
-                            num_classes = nc,
+                            num_classes = opts.num_cls,
                             dim = 1024,
                             depth = 6,
                             heads = 16,
@@ -70,7 +83,7 @@ def load_model(opts,nc):
                         )
     elif opts.model=='cct' or opts.model=='CCT':
         model = CCT(
-                    img_size = (opts.img_size,opts.img_size),
+                    img_size = im_size,
                     embedding_dim = 384,
                     n_conv_layers = 2,
                     kernel_size = 7,
@@ -82,14 +95,14 @@ def load_model(opts,nc):
                     num_layers = 14,
                     num_heads = 6,
                     mlp_ratio = 3.,
-                    num_classes = 3,
+                    num_classes = opts.num_cls,
                     positional_embedding = 'learnable', # ['sine', 'learnable', 'none']
                     )
     elif opts.model=='na-vit' or opts.model=='NaViT' or opts.model=='navit':
         model = NaViT(
-                    image_size = opts.img_size,
+                    image_size = im_size,
                     patch_size = 32,
-                    num_classes = 3,
+                    num_classes = opts.num_cls,
                     dim = 512,
                     depth = 6,
                     heads = 16,
@@ -100,9 +113,9 @@ def load_model(opts,nc):
                     )
     elif opts.model=='CaiT' or opts.model=='cait' or opts.model=='CAIT':
         model = CaiT(
-                    image_size = opts.img_size,
+                    image_size = im_size,
                     patch_size = 32,
-                    num_classes = 3,
+                    num_classes = opts.num_cls,
                     dim = 512,
                     depth = 12,             # depth of transformer for patch to patch attention only
                     cls_depth = 2,          # depth of cross attention of CLS tokens to patch
