@@ -27,13 +27,17 @@ def get_args():
     import argparse
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
-    parser.add_argument('-datatest','--data-predict',help='custom test data)',\
-                        default=r'/home/ali/Projects/datasets/landmark/test')
+    parser.add_argument('-datapredict','--data-predict',help='custom test data)',\
+                        default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/val')
     parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=128)
+
+    parser.add_argument('-imgw','--img-w',type=int,help='image size w',default=640)
+    parser.add_argument('-imgh','--img-h',type=int,help='image size h',default=64)
+
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='cait')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     parser.add_argument('-mpath','--model-path',help='pretrained model path',\
-                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/cait_best.pt')
+                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/resnet_best.pt')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
@@ -59,10 +63,14 @@ if torch.cuda.is_available():
     #print("cuda is available")
     model.cuda()
 
+if opts.img_h is not None and opts.img_w is not None:
+    size = (opts.img_h,opts.img_w)
+else:
+    size = opts.img_size
 pre_process = transforms.Compose([
-                transforms.Resize(opts.img_size),
+                transforms.Resize(size),
                 #transforms.RandomHorizontalFlip(),
-                transforms.CenterCrop(opts.img_size),
+                transforms.CenterCrop(size),
                 transforms.ToTensor()
                 #normalize
                 ])
@@ -82,7 +90,7 @@ def predict():
     #print('Waiting Test...')
     #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu' )
     predict_img_list = glob.glob(os.path.join(opts.data_predict,"**/*.jpg"))
-    class_dict={0:"lanemarking",1:"others",2:"stopsign"}
+    class_dict={0:"vanish line area",1:"others"}
     os.makedirs("./runs/predict",exist_ok=True)
     for i in class_dict:
         os.makedirs("./runs/predict/"+class_dict[i],exist_ok=True)
@@ -92,8 +100,10 @@ def predict():
     lm = 0
     ss = 0
     ot = 0
-    acc_dict = {"lanemarking":0,"others":0,"stopsign":0}
-    total_dict = {"lanemarking":0,"others":0,"stopsign":0}
+    # acc_dict = {"lanemarking":0,"others":0,"stopsign":0}
+    # total_dict = {"lanemarking":0,"others":0,"stopsign":0}
+    acc_dict = {"vanish line area":0,"others":0}
+    total_dict = {"vanish line area":0,"others":0}
     list_bar = tqdm(predict_img_list)
     with torch.no_grad():
         for pred_img_path in list_bar:
@@ -106,7 +116,10 @@ def predict():
             #                                 std=[0.229, 0.224, 0.225])
             trans_img = pre_process(img)
             #trans_img.to(device)
-            trans_img = trans_img.view([1,opts.nc,opts.img_size,opts.img_size])
+            if opts.img_w is not None  and opts.img_h is not None:
+                trans_img = trans_img.view([1,opts.nc,opts.img_h,opts.img_w])
+            else:
+                trans_img = trans_img.view([1,opts.nc,opts.img_size,opts.img_size])
             #print(trans_img.shape)
             pred = model(trans_img.cuda())
             #pred = softmax(pred.cpu().numpy())
