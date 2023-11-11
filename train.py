@@ -26,9 +26,10 @@ def get_args():
     parser.add_argument('-imgw','--img-w',type=int,help='image width',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image height',default=64)
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
+    parser.add_argument('-numcls','--num-cls',type=int,help='num of classes',default=2)
     parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
-    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=50)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
+    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='res2net')
     return parser.parse_args()
 
 torch.cuda.empty_cache()

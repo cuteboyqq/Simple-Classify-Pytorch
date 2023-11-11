@@ -90,7 +90,7 @@ def predict():
     #print('Waiting Test...')
     #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu' )
     predict_img_list = glob.glob(os.path.join(opts.data_predict,"**/*.jpg"))
-    class_dict={0:"vanish line area",1:"others"}
+    class_dict={0:"0",1:"1"}
     os.makedirs("./runs/predict",exist_ok=True)
     for i in class_dict:
         os.makedirs("./runs/predict/"+class_dict[i],exist_ok=True)
@@ -102,8 +102,8 @@ def predict():
     ot = 0
     # acc_dict = {"lanemarking":0,"others":0,"stopsign":0}
     # total_dict = {"lanemarking":0,"others":0,"stopsign":0}
-    acc_dict = {"vanish line area":0,"others":0}
-    total_dict = {"vanish line area":0,"others":0}
+    acc_dict = {"0":0,"1":0}
+    total_dict = {"0":0,"1":0}
     list_bar = tqdm(predict_img_list)
     with torch.no_grad():
         for pred_img_path in list_bar:
