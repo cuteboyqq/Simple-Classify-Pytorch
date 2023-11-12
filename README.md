@@ -16,9 +16,11 @@ model includes :
 
 3. [repVGG](models/repVGG.py)
    https://arxiv.org/abs/2101.03697
-   We present a simple but powerful architecture of convolutional neural network, which has a VGG-like inference-time body composed of nothing but a stack of 3x3 convolution and ReLU, while the training-time model has a multi-branch topology. Such decoupling of the training-time and inference-time architecture is realized by a structural re-parameterization technique so that the model is named RepVGG. On ImageNet, RepVGG reaches over 80% top-1 accuracy, which is the first time for a plain model, to the best of our knowledge. On NVIDIA 1080Ti GPU, RepVGG models run 83% faster than ResNet-50 or 101% faster than ResNet-101 with higher accuracy and show favorable accuracy-speed trade-off compared to the state-of-the-art models like EfficientNet and RegNet.
+      We present a simple but powerful architecture of convolutional neural network, which has a VGG-like inference-time body composed of nothing but a stack of 3x3 convolution and ReLU, while the training-time model has a multi-branch topology. Such decoupling of the training-time and inference-time architecture is realized by a structural re-parameterization technique so that the model is named RepVGG. On ImageNet, RepVGG reaches over 80% top-1 accuracy, which is the first time for a plain model, to the best of our knowledge. On NVIDIA 1080Ti GPU, RepVGG models run 83% faster than ResNet-50 or 101% faster than ResNet-101 with higher accuracy and show favorable accuracy-speed trade-off compared to the state-of-the-art models like EfficientNet and RegNet.
    
  ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/d69650c7-4279-4f12-8b74-9fa12bbea749)
+
+ ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/d15bb9a6-8f87-4838-bbab-1c1024f83785)
 
 
 5. [res2net](models/res2net.py)
@@ -29,17 +31,23 @@ model includes :
  ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/16d34626-84b0-450b-a6be-1ec9f140058f)
    
 6. [VGG16](models/VGG16.py)
-7. [shufflenet](models/shufflenet.py)  (2022/09/18 train have error)
-8. [EfficientNet](models/efficientnet.py) 
-9. [MobileNet](models/mobilenet.py) (2022/09/18 train have error)
-10. [MobileNetV2](models/mobilenetv2.py)
-11. [LeNet](models/lenet.py)
-12. [DenseNet](models/densenet.py)
-13. [ShuffleNetV2](models/shufflenetv2.py)
-14. [Vit](models/vit.py)
-15. [Cait](models/cait.py)
-16. [cct](models/cct.py)
-17. [simple-vit](models/simple_vit.py)
+   https://arxiv.org/abs/1409.1556
+   In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
+
+   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/454fc540-b6f4-4b64-abd9-01dc39f318ce)
+
+8. 
+9. [shufflenet](models/shufflenet.py)  (2022/09/18 train have error)
+10. [EfficientNet](models/efficientnet.py) 
+11. [MobileNet](models/mobilenet.py) (2022/09/18 train have error)
+12. [MobileNetV2](models/mobilenetv2.py)
+13. [LeNet](models/lenet.py)
+14. [DenseNet](models/densenet.py)
+15. [ShuffleNetV2](models/shufflenetv2.py)
+16. [Vit](models/vit.py)
+17. [Cait](models/cait.py)
+18. [cct](models/cct.py)
+19. [simple-vit](models/simple_vit.py)
 
 <!-- Add a demo for your project -->
 
