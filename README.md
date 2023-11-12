@@ -27,7 +27,7 @@ Here is a random GIF as a placeholder.
 you can use various network to train classify model, and l want the train and predict code as simple as possible
 
 ### Create-Environment
-[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+[(Back to top)](#table-of-contents)
 
 ```
 conda create --name Classify
@@ -39,18 +39,18 @@ conda activate Classify
 git clone https://github.com/cuteboyqq/Simple-Classify-Pytorch.git
 ```
 ### Requirement
-[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+[(Back to top)](#table-of-contents)
 
 ```
 pip install -r requirement.txt
 ```
 
 ### Usage
-[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+[(Back to top)](#table-of-contents)
 
 
 ### Train
-[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+[(Back to top)](#table-of-contents)
 
 user can train classify model by cifar/mnist/custom datasets, command is below
 ```
@@ -72,7 +72,7 @@ python train.py --data mnist --img-size 32 --batch-size 64  --model ShuffleNetV2
 python train.py --data [Enter custom dataset directory] --img-size 32 --batch-size 64  --model  MobileNetV2
 ```
 ### Predict
-[(Back to top)](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOMDATASET)
+[(Back to top)](#table-of-contents)
 
 after training done, you will have model at folder ./runs/train/ , so use this model to predict images and will save predict result images
 ```
