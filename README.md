@@ -19,13 +19,14 @@ model includes :
    
       We present a simple but powerful architecture of convolutional neural network, which has a VGG-like inference-time body composed of nothing but a stack of 3x3 convolution and ReLU, while the training-time model has a multi-branch topology. Such decoupling of the training-time and inference-time architecture is realized by a structural re-parameterization technique so that the model is named RepVGG. On ImageNet, RepVGG reaches over 80% top-1 accuracy, which is the first time for a plain model, to the best of our knowledge. On NVIDIA 1080Ti GPU, RepVGG models run 83% faster than ResNet-50 or 101% faster than ResNet-101 with higher accuracy and show favorable accuracy-speed trade-off compared to the state-of-the-art models like EfficientNet and RegNet.
    
-   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/55930a5d-a6c6-464a-91a4-b05ada151f98)
+   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/cfa08dc5-58f1-4031-b95a-c51cb5983227)
 
 3. [res2net](models/res2net.py) [Paper](https://arxiv.org/abs/1904.01169)
 
    Representing features at multiple scales is of great importance for numerous vision tasks. Recent advances in backbone convolutional neural networks (CNNs) continually demonstrate stronger multi-scale representation ability, leading to consistent performance gains on a wide range of applications. However, most existing methods represent the multi-scale features in a layer-wise manner. In this paper, we propose a novel building block for CNNs, namely Res2Net, by constructing hierarchical residual-like connections within one single residual block. The Res2Net represents multi-scale features at a granular level and increases the range of receptive fields for each network layer. The proposed Res2Net block can be plugged into the state-of-the-art backbone CNN models, e.g., ResNet, ResNeXt, and DLA. We evaluate the Res2Net block on all these models and demonstrate consistent performance gains over baseline models on widely-used datasets, e.g., CIFAR-100 and ImageNet. Further ablation studies and experimental results on representative computer vision tasks, i.e., object detection, class activation mapping, and salient object detection, further verify the superiority of the Res2Net over the state-of-the-art baseline methods. The source code and trained models are available on this https URL.
 
-   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/3df97f9e-5fe6-4092-a3aa-33c886adbfd7)
+   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/5527ca99-c6b0-45f5-b2b2-8b577b5cb8ae)
+
 
 
    
@@ -43,7 +44,8 @@ accuracy. Experiments on ImageNet classification and MS COCO object detection de
 error (absolute 7.8%) than recent MobileNet [12] on ImageNet classification task, under the computation budget of
 40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ∼13× actual speedup over AlexNet while maintaining comparable accuracy.
 
-   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/3fdbac06-170a-4751-a8d4-8fa23cce5b10)
+   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/f6a8a7a9-2ebe-4bd3-a455-a1bf5afc9a60)
+
  
 6. [EfficientNet](models/efficientnet.py) [Paper](https://arxiv.org/abs/1905.11946)
 
