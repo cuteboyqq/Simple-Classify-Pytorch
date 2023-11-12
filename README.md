@@ -227,7 +227,7 @@ Comprehensive ablation experiments verify that our model is the stateof-the-art 
     ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/3766457e-8d94-4b85-93af-ad9d7cf092c2)
 
 #### CCT
-24. [CCT](models/cct.py) [Paper](https://arxiv.org/abs/2104.05704)
+24. [CCT](models/cct.py) [Paper](https://arxiv.org/abs/2104.05704) [(Back to table)](#Model-History)
 
     Author : A Hassani  · 2021 · Referenced : 294  
 
