@@ -29,10 +29,14 @@ you can use various network to train classify model, and l want the train and pr
 1. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
 2. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
 3. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
-
+4. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
+5. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
+6. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
+7. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
+8. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573  
 ### Model-Abstract
 #### ResNet
-1. [Code](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#table-of-contents)
+1. [Network](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#Model-History)
 
     Author : K He  · 2015 · Referenced : 188186 
    
@@ -42,7 +46,7 @@ you can use various network to train classify model, and l want the train and pr
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/f01d0c15-1a97-4965-8c90-0f03d8afced9)
 
 #### RepVGG
-2. [Code](models/repVGG.py)  [Paper](https://arxiv.org/abs/2101.03697) [(Back to table)](#table-of-contents)
+2. [Network](models/repVGG.py)  [Paper](https://arxiv.org/abs/2101.03697) [(Back to table)](#Model-History)
 
       Author : X Ding  · 2021 · Referenced : 1010
       
@@ -51,7 +55,7 @@ you can use various network to train classify model, and l want the train and pr
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/cfa08dc5-58f1-4031-b95a-c51cb5983227)
 
 #### Res2Net
-4. [res2net](models/res2net.py) [Paper](https://arxiv.org/abs/1904.01169) [(Back to table)](#table-of-contents)
+4. [Network](models/res2net.py) [Paper](https://arxiv.org/abs/1904.01169) [(Back to table)](#Model-History)
 
     Author : SH Gao  · 2019 · Referenced : 1998
    
@@ -59,14 +63,15 @@ you can use various network to train classify model, and l want the train and pr
 
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/5527ca99-c6b0-45f5-b2b2-8b577b5cb8ae)
 
-5. [VGG16](models/VGG16.py) [Paper](https://arxiv.org/abs/1409.1556) [(Back to table)](#table-of-contents)
+#### VGG16
+4. [Network](models/VGG16.py) [Paper](https://arxiv.org/abs/1409.1556) [(Back to table)](#Model-History)
 
    Author : K Simonyan  · 2014 · Referenced : 112804
    
    In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
 
- 
-6. [shufflenet](models/shufflenet.py) [Paper](https://arxiv.org/abs/1707.01083) [(Back to table)](#table-of-contents) (2022/09/18 train have error)
+#### ShuffleNet
+5. [Network](models/shufflenet.py) [Paper](https://arxiv.org/abs/1707.01083) [(Back to table)](#Model-History) (2022/09/18 train have error)
 
    Author : X Zhang  · 2017 · Referenced : 6972
 
@@ -79,8 +84,8 @@ error (absolute 7.8%) than recent MobileNet [12] on ImageNet classification task
 
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/f6a8a7a9-2ebe-4bd3-a455-a1bf5afc9a60)
 
- 
-5. [EfficientNet](models/efficientnet.py) [Paper](https://arxiv.org/abs/1905.11946) [(Back to table)](#table-of-contents)
+#### EfficientNet
+6. [Network](models/efficientnet.py) [Paper](https://arxiv.org/abs/1905.11946) [(Back to table)](#Model-History)
 
     Author : M Tan  · 2019 · Referenced : 15999
     
@@ -91,8 +96,8 @@ To go even further, we use neural architecture search to design a new baseline n
 
 
 
-   
-6. [MobileNet](models/mobilenet.py) [Paper](https://arxiv.org/abs/1704.04861) [(Back to table)](#table-of-contents) (2022/09/18 train have error)
+#### MobileNet
+7. [Network](models/mobilenet.py) [Paper](https://arxiv.org/abs/1704.04861) [(Back to table)](#Model-History) (2022/09/18 train have error)
 
    Author : AG Howard  · 2017 · Referenced : 22147 
    
@@ -100,7 +105,8 @@ To go even further, we use neural architecture search to design a new baseline n
 
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/abcddb1f-9661-4c75-b19f-7c43451342ea)
 
-14. [MobileNetV2](models/mobilenetv2.py) [Paper](https://arxiv.org/abs/1801.04381) [(Back to table)](#table-of-contents)
+#### MobileNetV2
+8. [Network](models/mobilenetv2.py) [Paper](https://arxiv.org/abs/1801.04381) [(Back to table)](#Model-History)
 
     Author : M Sandler  · 2018 · Referenced : 18573  
     
@@ -114,7 +120,9 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
 16. [LeNet](models/lenet.py)
 17. [DenseNet](models/densenet.py)
 18. [ShuffleNetV2](models/shufflenetv2.py)
-19. [Vit](models/vit.py) [Paper](https://arxiv.org/abs/2010.11929) [(Back to table)](#table-of-contents)
+
+#### Vit
+20. [Network](models/vit.py) [Paper](https://arxiv.org/abs/2010.11929) [(Back to table)](#Model-History)
 
     Author : A Dosovitskiy  · 2020 · Referenced : 24385 
 
