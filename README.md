@@ -11,6 +11,7 @@ Here is a random GIF as a placeholder.
 
 ### table-of-contents
 - [Classify-model-Pytorch](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOM-DATASET)
+- [model-abstract](#Model-Abstract)
 - [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
@@ -23,7 +24,7 @@ Here is a random GIF as a placeholder.
 ### [2023-08-19] add predict.py code
 you can use various network to train classify model, and l want the train and predict code as simple as possible
 
-model includes :
+### Model-Abstract
 1. [resnet](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#table-of-contents)
 
     Author : K He  · 2015 · Referenced : 188186 
