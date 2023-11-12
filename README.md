@@ -12,10 +12,11 @@
 4. [Res2Net](#Res2Net) [Network](models/res2net.py) Author : SH Gao  · 2019 · Referenced : 1998
 5. [EfficientNet](#EfficientNet) [Network](models/efficientnet.py) Author : M Tan  · 2019 · Referenced : 15999
 6. [MobileNetV2](#MobileNetV2) [Network](models/mobilenetv2.py) Author : M Sandler  · 2018 · Referenced : 18573
-7. [MobileNet](#MobileNet)  [Network](models/mobilenet.py) Author : AG Howard  · 2017 · Referenced : 22147
-8. [ShuffleNet](#ShuffleNet) [Network](models/shufflenet.py) Author : X Zhang  · 2017 · Referenced : 6972
-9. [ResNet](#ResNet) [Network](models/resnet.py) Author : K He  · 2015 · Referenced : 188186
-10. [VGG16](#VGG16) [Network](models/VGG16.py) Author : K Simonyan  · 2014 · Referenced : 112804
+7. [ShuffleNetV2](#ShuffleNetV2) [Network](models/shufflenetv2.py) Author : N Ma · 2018 · Referenced : 4622  
+8. [MobileNet](#MobileNet)  [Network](models/mobilenet.py) Author : AG Howard  · 2017 · Referenced : 22147
+9. [ShuffleNet](#ShuffleNet) [Network](models/shufflenet.py) Author : X Zhang  · 2017 · Referenced : 6972
+10. [ResNet](#ResNet) [Network](models/resnet.py) Author : K He  · 2015 · Referenced : 188186
+11. [VGG16](#VGG16) [Network](models/VGG16.py) Author : K Simonyan  · 2014 · Referenced : 112804
 
 
 <!-- Add a demo for your project -->
@@ -190,7 +191,20 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
     
 16. [LeNet](models/lenet.py)
 17. [DenseNet](models/densenet.py)
-18. [ShuffleNetV2](models/shufflenetv2.py)
+
+#### ShuffleNetV2
+19. [ShuffleNetV2](models/shufflenetv2.py) [Paper](https://arxiv.org/abs/1807.11164)
+
+    Author : N Ma · 2018 · Referenced : 4622  
+    
+    Currently, the neural network architecture design is mostly guided by the indirect metric of computation complexity, i.e., FLOPs.
+However, the direct metric, e.g., speed, also depends on the other factors such as memory access cost and platform characterics. Thus, this work
+proposes to evaluate the direct metric on the target platform, beyond only considering FLOPs. Based on a series of controlled experiments,
+this work derives several practical guidelines for efficient network design. Accordingly, a new architecture is presented, called ShuffleNet V2.
+Comprehensive ablation experiments verify that our model is the stateof-the-art in terms of speed and accuracy tradeoff.
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/7dcfea9f-3442-46df-bc6c-07ec8d586b59)
+
 
 #### Vit
 20. [Network](models/vit.py) [Paper](https://arxiv.org/abs/2010.11929) [(Back to table)](#Model-History)
