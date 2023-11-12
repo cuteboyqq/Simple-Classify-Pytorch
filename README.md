@@ -23,18 +23,18 @@ Here is a random GIF as a placeholder.
 ### Model-History
 [(Back-to-Table)](#table-of-contents)
 
-1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Referenced : 10 
-1. [Cait](#Cait) [Network](models/cait.py) Author : H Touvron  · 2021 · referenced : 728
-2. [Vit](#Vit) [Network](models/vit.py) Author : A Dosovitskiy  · 2020 · Referenced : 24385
-3. [RepVGG](#RepVGG) [Network](models/repVGG.py) Author : X Ding  · 2021 · Referenced : 1010
-4. [Res2Net](#Res2Net) [Network](models/res2net.py) Author : SH Gao  · 2019 · Referenced : 1998
-5. [EfficientNet](#EfficientNet) [Network](models/efficientnet.py) Author : M Tan  · 2019 · Referenced : 15999
-6. [MobileNetV2](#MobileNetV2) [Network](models/mobilenetv2.py) Author : M Sandler  · 2018 · Referenced : 18573
-7. [ShuffleNetV2](#ShuffleNetV2) [Network](models/shufflenetv2.py) Author : N Ma · 2018 · Referenced : 4622  
-8. [MobileNet](#MobileNet)  [Network](models/mobilenet.py) Author : AG Howard  · 2017 · Referenced : 22147
-9. [ShuffleNet](#ShuffleNet) [Network](models/shufflenet.py) Author : X Zhang  · 2017 · Referenced : 6972
-10. [ResNet](#ResNet) [Network](models/resnet.py) Author : K He  · 2015 · Referenced : 188186
-11. [VGG16](#VGG16) [Network](models/VGG16.py) Author : K Simonyan  · 2014 · Referenced : 112804
+1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Ref. : 10 
+1. [Cait](#Cait) [Network](models/cait.py) Author : H Touvron  · 2021 · Ref. : 728
+2. [Vit](#Vit) [Network](models/vit.py) Author : A Dosovitskiy  · 2020 · Ref. : 24385
+3. [RepVGG](#RepVGG) [Network](models/repVGG.py) Author : X Ding  · 2021 · Ref. : 1010
+4. [Res2Net](#Res2Net) [Network](models/res2net.py) Author : SH Gao  · 2019 · Ref. : 1998
+5. [EfficientNet](#EfficientNet) [Network](models/efficientnet.py) Author : M Tan  · 2019 · Ref. : 15999
+6. [MobileNetV2](#MobileNetV2) [Network](models/mobilenetv2.py) Author : M Sandler  · 2018 · Ref. : 18573
+7. [ShuffleNetV2](#ShuffleNetV2) [Network](models/shufflenetv2.py) Author : N Ma · 2018 · Ref. : 4622  
+8. [MobileNet](#MobileNet)  [Network](models/mobilenet.py) Author : AG Howard  · 2017 · Ref. : 22147
+9. [ShuffleNet](#ShuffleNet) [Network](models/shufflenet.py) Author : X Zhang  · 2017 · Ref. : 6972
+10. [ResNet](#ResNet) [Network](models/resnet.py) Author : K He  · 2015 · Ref. : 188186
+11. [VGG16](#VGG16) [Network](models/VGG16.py) Author : K Simonyan  · 2014 · Ref. : 112804
 
 
 
