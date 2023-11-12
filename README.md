@@ -212,7 +212,7 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
 24. [cct](models/cct.py)
 
 #### Sim-Vit
-26. [simple-vit](models/simple_vit.py) [Paper](https://arxiv.org/abs/2112.13085)
+26. [simple-vit](models/simple_vit.py) [Paper](https://arxiv.org/abs/2112.13085) [(Back to table)](#Model-History)
 
     Author : G Li  · 2021 · Referenced : 10 
     
