@@ -88,7 +88,6 @@ python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/run
 ```
 
 ### Model-History
-
 [(Back-to-Table)](#table-of-contents)
 
 1. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
