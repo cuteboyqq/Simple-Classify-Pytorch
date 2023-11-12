@@ -33,19 +33,30 @@ model includes :
    
    In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
 
+ 
+5. [shufflenet](models/shufflenet.py) [Paper](https://arxiv.org/abs/1707.01083) (2022/09/18 train have error)
 
-8. 
-9. [shufflenet](models/shufflenet.py)  (2022/09/18 train have error)
-10. [EfficientNet](models/efficientnet.py) 
-11. [MobileNet](models/mobilenet.py) (2022/09/18 train have error)
-12. [MobileNetV2](models/mobilenetv2.py)
-13. [LeNet](models/lenet.py)
-14. [DenseNet](models/densenet.py)
-15. [ShuffleNetV2](models/shufflenetv2.py)
-16. [Vit](models/vit.py)
-17. [Cait](models/cait.py)
-18. [cct](models/cct.py)
-19. [simple-vit](models/simple_vit.py)
+   We introduce an extremely computation-efficient CNN architecture named ShuffleNet, which is designed specially
+for mobile devices with very limited computing power (e.g.,10-150 MFLOPs). The new architecture utilizes two new
+operations, pointwise group convolution and channel shuffle, to greatly reduce computation cost while maintaining
+accuracy. Experiments on ImageNet classification and MS COCO object detection demonstrate the superior performance of ShuffleNet over other structures, e.g. lower top-1
+error (absolute 7.8%) than recent MobileNet [12] on ImageNet classification task, under the computation budget of
+40 MFLOPs. On an ARM-based mobile device, ShuffleNet achieves ∼13× actual speedup over AlexNet while maintaining comparable accuracy.
+
+   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/3fdbac06-170a-4751-a8d4-8fa23cce5b10)
+
+
+10. 
+11. [EfficientNet](models/efficientnet.py) 
+12. [MobileNet](models/mobilenet.py) (2022/09/18 train have error)
+13. [MobileNetV2](models/mobilenetv2.py)
+14. [LeNet](models/lenet.py)
+15. [DenseNet](models/densenet.py)
+16. [ShuffleNetV2](models/shufflenetv2.py)
+17. [Vit](models/vit.py)
+18. [Cait](models/cait.py)
+19. [cct](models/cct.py)
+20. [simple-vit](models/simple_vit.py)
 
 <!-- Add a demo for your project -->
 
