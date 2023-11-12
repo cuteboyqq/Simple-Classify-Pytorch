@@ -26,14 +26,15 @@ Here is a random GIF as a placeholder.
 you can use various network to train classify model, and l want the train and predict code as simple as possible
 
 ### Model-History
-1. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
-2. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
-3. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
-4. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
-5. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
-6. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
-7. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
-8. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573  
+1. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
+2. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
+3. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
+4. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573
+5. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
+6. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
+7. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
+8. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
+
 ### Model-Abstract
 #### ResNet
 1. [Network](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#Model-History)
