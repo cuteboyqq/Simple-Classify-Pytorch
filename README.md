@@ -108,7 +108,7 @@ python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/run
 
 ### Model-Abstract
 #### ResNet
-1. [Network](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#Model-History)
+1. [(Network)](models/resnet.py) [(Paper)](https://arxiv.org/abs/1512.03385) [(Back to table)](#Model-History)
 
     Author : K He  · 2015 · Referenced : 188186 
    
