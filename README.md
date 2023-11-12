@@ -29,12 +29,12 @@ Here is a random GIF as a placeholder.
 
 ### table-of-contents
 - [Classify-model-Pytorch](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOM-DATASET)
+- [Model-History](#Model-History)
 - [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
     - [Train](#Train)
     - [Predict](#Predict)
-- [Model-History](#Model-History)
 - [Model-Abstract](#Model-Abstract)
 
 
