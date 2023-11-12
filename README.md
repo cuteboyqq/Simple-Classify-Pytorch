@@ -11,7 +11,8 @@ Here is a random GIF as a placeholder.
 
 ### table-of-contents
 - [Classify-model-Pytorch](#Classify-model-Pytorch-MNIST-CIFAR10-CUSTOM-DATASET)
-- [model-abstract](#Model-Abstract)
+- [Model-History](#Model-History)
+- [Model-Abstract](#Model-Abstract)
 - [Create-Environment](#Create-Environment)
 - [Requirement](#Requirement)
 - [Usage](#usage)
@@ -24,7 +25,13 @@ Here is a random GIF as a placeholder.
 ### [2023-08-19] add predict.py code
 you can use various network to train classify model, and l want the train and predict code as simple as possible
 
+### Model-History
+1. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
+   
+2. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
+
 ### Model-Abstract
+#### ResNet
 1. [resnet](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#table-of-contents)
 
     Author : K He  · 2015 · Referenced : 188186 
@@ -34,7 +41,7 @@ you can use various network to train classify model, and l want the train and pr
    
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/f01d0c15-1a97-4965-8c90-0f03d8afced9)
 
-
+#### RepVGG
 2. [repVGG](models/repVGG.py)  [Paper](https://arxiv.org/abs/2101.03697) [(Back to table)](#table-of-contents)
 
       Author : X Ding  · 2021 · Referenced : 1010
@@ -43,7 +50,7 @@ you can use various network to train classify model, and l want the train and pr
    
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/cfa08dc5-58f1-4031-b95a-c51cb5983227)
 
-3. [res2net](models/res2net.py) [Paper](https://arxiv.org/abs/1904.01169) [(Back to table)](#table-of-contents)
+4. [res2net](models/res2net.py) [Paper](https://arxiv.org/abs/1904.01169) [(Back to table)](#table-of-contents)
 
     Author : SH Gao  · 2019 · Referenced : 1998
    
@@ -51,14 +58,14 @@ you can use various network to train classify model, and l want the train and pr
 
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/5527ca99-c6b0-45f5-b2b2-8b577b5cb8ae)
 
-4. [VGG16](models/VGG16.py) [Paper](https://arxiv.org/abs/1409.1556) [(Back to table)](#table-of-contents)
+5. [VGG16](models/VGG16.py) [Paper](https://arxiv.org/abs/1409.1556) [(Back to table)](#table-of-contents)
 
    Author : K Simonyan  · 2014 · Referenced : 112804
    
    In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
 
  
-5. [shufflenet](models/shufflenet.py) [Paper](https://arxiv.org/abs/1707.01083) [(Back to table)](#table-of-contents) (2022/09/18 train have error)
+6. [shufflenet](models/shufflenet.py) [Paper](https://arxiv.org/abs/1707.01083) [(Back to table)](#table-of-contents) (2022/09/18 train have error)
 
    Author : X Zhang  · 2017 · Referenced : 6972
 
