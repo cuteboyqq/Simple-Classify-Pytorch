@@ -88,10 +88,16 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
 16. [LeNet](models/lenet.py)
 17. [DenseNet](models/densenet.py)
 18. [ShuffleNetV2](models/shufflenetv2.py)
-19. [Vit](models/vit.py)
-20. [Cait](models/cait.py)
-21. [cct](models/cct.py)
-22. [simple-vit](models/simple_vit.py)
+19. [Vit](models/vit.py) [Paper](https://arxiv.org/abs/2010.11929)
+
+    While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/15bd4576-df2f-43e1-93a6-b8db49006415)
+
+    
+21. [Cait](models/cait.py)
+22. [cct](models/cct.py)
+23. [simple-vit](models/simple_vit.py)
 
 <!-- Add a demo for your project -->
 
