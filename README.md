@@ -193,7 +193,7 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
 17. [DenseNet](models/densenet.py)
 
 #### ShuffleNetV2
-19. [ShuffleNetV2](models/shufflenetv2.py) [Paper](https://arxiv.org/abs/1807.11164)
+19. [Network](models/shufflenetv2.py) [Paper](https://arxiv.org/abs/1807.11164)
 
     Author : N Ma · 2018 · Referenced : 4622  
     
