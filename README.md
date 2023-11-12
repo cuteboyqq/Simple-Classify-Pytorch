@@ -1,6 +1,23 @@
 
 # Classify-model-Pytorch-MNIST-CIFAR10-CUSTOM-DATASET
 
+
+### Model-History
+[(Back-to-Table)](#table-of-contents)
+
+1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Referenced : 10 
+1. [Cait](#Cait) [Network](models/cait.py) Author : H Touvron  · 2021 · referenced : 728
+2. [Vit](#Vit) [Network](models/vit.py) Author : A Dosovitskiy  · 2020 · Referenced : 24385
+3. [RepVGG](#RepVGG) [Network](models/repVGG.py) Author : X Ding  · 2021 · Referenced : 1010
+4. [Res2Net](#Res2Net) [Network](models/res2net.py) Author : SH Gao  · 2019 · Referenced : 1998
+5. [EfficientNet](#EfficientNet) [Network](models/efficientnet.py) Author : M Tan  · 2019 · Referenced : 15999
+6. [MobileNetV2](#MobileNetV2) [Network](models/mobilenetv2.py) Author : M Sandler  · 2018 · Referenced : 18573
+7. [MobileNet](#MobileNet)  [Network](models/mobilenet.py) Author : AG Howard  · 2017 · Referenced : 22147
+8. [ShuffleNet](#ShuffleNet) [Network](models/shufflenet.py) Author : X Zhang  · 2017 · Referenced : 6972
+9. [ResNet](#ResNet) [Network](models/resnet.py) Author : K He  · 2015 · Referenced : 188186
+10. [VGG16](#VGG16) [Network](models/VGG16.py) Author : K Simonyan  · 2014 · Referenced : 112804
+
+
 <!-- Add a demo for your project -->
 
 <!-- After you have written about your project, it is a good idea to have a demo/preview(**video/gif/screenshots** are good options) of your project so that people can know what to expect in your project. You could also add the demo in the previous section with the product description.
@@ -87,20 +104,6 @@ For examples :
 python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/runs/train/resnet_best.pt]
 ```
 
-### Model-History
-[(Back-to-Table)](#table-of-contents)
-
-1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Referenced : 10 
-1. [Cait](#Cait) [Network](models/cait.py) Author : H Touvron  · 2021 · referenced : 728
-2. [Vit](#Vit) [Network](models/vit.py) Author : A Dosovitskiy  · 2020 · Referenced : 24385
-3. [RepVGG](#RepVGG) [Network](models/repVGG.py) Author : X Ding  · 2021 · Referenced : 1010
-4. [Res2Net](#Res2Net) [Network](models/res2net.py) Author : SH Gao  · 2019 · Referenced : 1998
-5. [EfficientNet](#EfficientNet) [Network](models/efficientnet.py) Author : M Tan  · 2019 · Referenced : 15999
-6. [MobileNetV2](#MobileNetV2) [Network](models/mobilenetv2.py) Author : M Sandler  · 2018 · Referenced : 18573
-7. [MobileNet](#MobileNet)  [Network](models/mobilenet.py) Author : AG Howard  · 2017 · Referenced : 22147
-8. [ShuffleNet](#ShuffleNet) [Network](models/shufflenet.py) Author : X Zhang  · 2017 · Referenced : 6972
-9. [ResNet](#ResNet) [Network](models/resnet.py) Author : K He  · 2015 · Referenced : 188186
-10. [VGG16](#VGG16) [Network](models/VGG16.py) Author : K Simonyan  · 2014 · Referenced : 112804
 
 ### Model-Abstract
 #### ResNet
