@@ -108,7 +108,7 @@ python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/run
 
 ### Model-Abstract
 #### ResNet
-1. [(Network)](models/resnet.py) [(Paper)](https://arxiv.org/abs/1512.03385) [(Back to table)](#Model-History)
+1. [Network](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#Model-History)
 
     Author : K He  · 2015 · Referenced : 188186 
    
@@ -229,7 +229,7 @@ Comprehensive ablation experiments verify that our model is the stateof-the-art 
 24. [cct](models/cct.py)
 
 #### Sim-Vit
-26. [simple-vit](models/simple_vit.py) [Paper](https://arxiv.org/abs/2112.13085) [(Back to table)](#Model-History)
+26. [Network](models/simple_vit.py) [Paper](https://arxiv.org/abs/2112.13085) [(Back to table)](#Model-History)
 
     Author : G Li  · 2021 · Referenced : 10 
     
