@@ -18,18 +18,22 @@ The depth of representations is of central importance for many visual recognitio
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/12f1ede8-e99e-4e7d-b52b-7a9cda2c79aa)
 
 4. [res2net](models/res2net.py)
-5. [VGG16](models/VGG16.py)
-6. [shufflenet](models/shufflenet.py)  (2022/09/18 train have error)
-7. [EfficientNet](models/efficientnet.py) 
-8. [MobileNet](models/mobilenet.py) (2022/09/18 train have error)
-9. [MobileNetV2](models/mobilenetv2.py)
-10. [LeNet](models/lenet.py)
-11. [DenseNet](models/densenet.py)
-12. [ShuffleNetV2](models/shufflenetv2.py)
-13. [Vit](models/vit.py)
-14. [Cait](models/cait.py)
-15. [cct](models/cct.py)
-16. [simple-vit](models/simple_vit.py)
+    https://arxiv.org/abs/1904.01169
+   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/16d34626-84b0-450b-a6be-1ec9f140058f)
+
+   Representing features at multiple scales is of great importance for numerous vision tasks. Recent advances in backbone convolutional neural networks (CNNs) continually demonstrate stronger multi-scale representation ability, leading to consistent performance gains on a wide range of applications. However, most existing methods represent the multi-scale features in a layer-wise manner. In this paper, we propose a novel building block for CNNs, namely Res2Net, by constructing hierarchical residual-like connections within one single residual block. The Res2Net represents multi-scale features at a granular level and increases the range of receptive fields for each network layer. The proposed Res2Net block can be plugged into the state-of-the-art backbone CNN models, e.g., ResNet, ResNeXt, and DLA. We evaluate the Res2Net block on all these models and demonstrate consistent performance gains over baseline models on widely-used datasets, e.g., CIFAR-100 and ImageNet. Further ablation studies and experimental results on representative computer vision tasks, i.e., object detection, class activation mapping, and salient object detection, further verify the superiority of the Res2Net over the state-of-the-art baseline methods. The source code and trained models are available on this https URL.  
+6. [VGG16](models/VGG16.py)
+7. [shufflenet](models/shufflenet.py)  (2022/09/18 train have error)
+8. [EfficientNet](models/efficientnet.py) 
+9. [MobileNet](models/mobilenet.py) (2022/09/18 train have error)
+10. [MobileNetV2](models/mobilenetv2.py)
+11. [LeNet](models/lenet.py)
+12. [DenseNet](models/densenet.py)
+13. [ShuffleNetV2](models/shufflenetv2.py)
+14. [Vit](models/vit.py)
+15. [Cait](models/cait.py)
+16. [cct](models/cct.py)
+17. [simple-vit](models/simple_vit.py)
 
 <!-- Add a demo for your project -->
 
