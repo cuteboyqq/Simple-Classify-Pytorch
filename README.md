@@ -74,14 +74,22 @@ To go even further, we use neural architecture search to design a new baseline n
 
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/abcddb1f-9661-4c75-b19f-7c43451342ea)
 
-14. [MobileNetV2](models/mobilenetv2.py)
-15. [LeNet](models/lenet.py)
-16. [DenseNet](models/densenet.py)
-17. [ShuffleNetV2](models/shufflenetv2.py)
-18. [Vit](models/vit.py)
-19. [Cait](models/cait.py)
-20. [cct](models/cct.py)
-21. [simple-vit](models/simple_vit.py)
+14. [MobileNetV2](models/mobilenetv2.py) [Paper](https://arxiv.org/abs/1801.04381)
+    
+    In this paper we describe a new mobile architecture, MobileNetV2, that improves the state of the art performance of mobile models on multiple tasks and benchmarks as well as across a spectrum of different model sizes. We also describe efficient ways of applying these mobile models to object detection in a novel framework we call SSDLite. Additionally, we demonstrate how to build mobile semantic segmentation models through a reduced form of DeepLabv3 which we call Mobile DeepLabv3.
+The MobileNetV2 architecture is based on an inverted residual structure where the input and output of the residual block are thin bottleneck layers opposite to traditional residual models which use expanded representations in the input an MobileNetV2 uses lightweight depthwise convolutions to filter features in the intermediate expansion layer. Additionally, we find that it is important to remove non-linearities in the narrow layers in order to maintain representational power. We demonstrate that this improves performance and provide an intuition that led to this design. Finally, our approach allows decoupling of the input/output domains from the expressiveness of the transformation, which provides a convenient framework for further analysis. We measure our performance on Imagenet classification, COCO object detection, VOC image segmentation. We evaluate the trade-offs between accuracy, and number of operations measured by multiply-adds (MAdd), as well as the number of parameters
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/945a691b-113b-4752-bf81-ec68a0c953d4)
+
+
+    
+16. [LeNet](models/lenet.py)
+17. [DenseNet](models/densenet.py)
+18. [ShuffleNetV2](models/shufflenetv2.py)
+19. [Vit](models/vit.py)
+20. [Cait](models/cait.py)
+21. [cct](models/cct.py)
+22. [simple-vit](models/simple_vit.py)
 
 <!-- Add a demo for your project -->
 
