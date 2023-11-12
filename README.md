@@ -12,17 +12,16 @@ model includes :
        Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers---8x deeper than VGG nets but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers.
    The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
 ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/f01d0c15-1a97-4965-8c90-0f03d8afced9)
-![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/2ed22f86-0bec-4460-b06b-bf3773f682b4)
 
-3. [repVGG](models/repVGG.py)
+
+2. [repVGG](models/repVGG.py)
    https://arxiv.org/abs/2101.03697
       We present a simple but powerful architecture of convolutional neural network, which has a VGG-like inference-time body composed of nothing but a stack of 3x3 convolution and ReLU, while the training-time model has a multi-branch topology. Such decoupling of the training-time and inference-time architecture is realized by a structural re-parameterization technique so that the model is named RepVGG. On ImageNet, RepVGG reaches over 80% top-1 accuracy, which is the first time for a plain model, to the best of our knowledge. On NVIDIA 1080Ti GPU, RepVGG models run 83% faster than ResNet-50 or 101% faster than ResNet-101 with higher accuracy and show favorable accuracy-speed trade-off compared to the state-of-the-art models like EfficientNet and RegNet.
    
  ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/d69650c7-4279-4f12-8b74-9fa12bbea749)
- ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/d15bb9a6-8f87-4838-bbab-1c1024f83785)
 
 
-5. [res2net](models/res2net.py)
+3. [res2net](models/res2net.py)
     https://arxiv.org/abs/1904.01169
    
    Representing features at multiple scales is of great importance for numerous vision tasks. Recent advances in backbone convolutional neural networks (CNNs) continually demonstrate stronger multi-scale representation ability, leading to consistent performance gains on a wide range of applications. However, most existing methods represent the multi-scale features in a layer-wise manner. In this paper, we propose a novel building block for CNNs, namely Res2Net, by constructing hierarchical residual-like connections within one single residual block. The Res2Net represents multi-scale features at a granular level and increases the range of receptive fields for each network layer. The proposed Res2Net block can be plugged into the state-of-the-art backbone CNN models, e.g., ResNet, ResNeXt, and DLA. We evaluate the Res2Net block on all these models and demonstrate consistent performance gains over baseline models on widely-used datasets, e.g., CIFAR-100 and ImageNet. Further ablation studies and experimental results on representative computer vision tasks, i.e., object detection, class activation mapping, and salient object detection, further verify the superiority of the Res2Net over the state-of-the-art baseline methods. The source code and trained models are available on this https URL.
@@ -33,11 +32,10 @@ model includes :
 
 
    
-6. [VGG16](models/VGG16.py)
+4. [VGG16](models/VGG16.py)
    https://arxiv.org/abs/1409.1556
    In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.
 
-   ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/454fc540-b6f4-4b64-abd9-01dc39f318ce)
 
 8. 
 9. [shufflenet](models/shufflenet.py)  (2022/09/18 train have error)
