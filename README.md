@@ -23,7 +23,8 @@ Here is a random GIF as a placeholder.
 ### Model-History
 [(Back-to-Table)](#table-of-contents)
 
-1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Ref. : 10 
+1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Ref. : 10
+2. [CCT](#CCT) [Network](models/cct.py) Author : A Hassani  · 2021 · Referenced : 294  
 1. [Cait](#Cait) [Network](models/cait.py) Author : H Touvron  · 2021 · Ref. : 728
 2. [Vit](#Vit) [Network](models/vit.py) Author : A Dosovitskiy  · 2020 · Ref. : 24385
 3. [RepVGG](#RepVGG) [Network](models/repVGG.py) Author : X Ding  · 2021 · Ref. : 1010
@@ -225,8 +226,17 @@ Comprehensive ablation experiments verify that our model is the stateof-the-art 
 
     ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/3766457e-8d94-4b85-93af-ad9d7cf092c2)
 
-    
-24. [cct](models/cct.py)
+#### CCT
+24. [CCT](models/cct.py) [Paper](https://arxiv.org/abs/2104.05704)
+
+    Author : A Hassani  · 2021 · Referenced : 294  
+
+    With the rise of Transformers as the standard for language processing, and their advancements in computer vision, there has been a corresponding growth in parameter size and amounts of training data. Many have come to believe that because of this, transformers are not suitable for small sets of data. This trend leads to concerns such as: limited availability of data in certain scientific domains and the exclusion of those with limited resource from research in the field. In this paper, we aim to present an approach for small-scale learning by introducing Compact Transformers. We show for the first time that with the right size, convolutional tokenization, transformers can avoid overfitting and outperform state-of-the-art CNNs on small datasets. Our models are flexible in terms of model size, and can have as little as 0.28M parameters while achieving competitive results. Our best model can reach 98% accuracy when training from scratch on CIFAR-10 with only 3.7M parameters, which is a significant improvement in data-efficiency over previous Transformer based models being over 10x smaller than other transformers and is 15% the size of ResNet50 while achieving similar performance. CCT also outperforms many modern CNN based approaches, and even some recent NAS-based approaches. Additionally, we obtain a new SOTA result on Flowers-102 with 99.76% top-1 accuracy, and improve upon the existing baseline on ImageNet (82.71% accuracy with 29% as many parameters as ViT), as well as NLP tasks. Our simple and compact design for transformers makes them more feasible to study for those with limited computing resources and/or dealing with small datasets, while extending existing research efforts in data efficient transformers. Our code and pre-trained models are publicly available at this https URL.
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/80d07c0c-f21c-4880-88af-de1597c0564f)
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/99287e0d-6751-4610-aec2-f39f54918eaf)
+
 
 #### Sim-Vit
 26. [Network](models/simple_vit.py) [Paper](https://arxiv.org/abs/2112.13085) [(Back to table)](#Model-History)
