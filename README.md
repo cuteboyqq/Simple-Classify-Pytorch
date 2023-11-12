@@ -90,14 +90,15 @@ python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/run
 ### Model-History
 [(Back-to-Table)](#table-of-contents)
 
-1. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
-2. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
-3. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
-4. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573
-5. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
-6. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
-7. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
-8. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
+1. [Cait](#Cait) Author : H Touvron  · 2021 · referenced : 728 
+2. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
+3. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
+4. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
+5. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573
+6. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
+7. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
+8. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
+9. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
 
 ### Model-Abstract
 #### ResNet
@@ -196,9 +197,17 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
     ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/15bd4576-df2f-43e1-93a6-b8db49006415)
 
     
-21. [Cait](models/cait.py)
-22. [cct](models/cct.py)
-23. [simple-vit](models/simple_vit.py)
+21. [Cait](models/cait.py) [Paper](https://arxiv.org/abs/2103.17239) [(Back to table)](#Model-History)
+
+    Author : H Touvron  · 2021 · referenced : 728 
+
+    Transformers have been recently adapted for large scale image classification, achieving high scores shaking up the long supremacy of convolutional neural networks. However the optimization of image transformers has been little studied so far. In this work, we build and optimize deeper transformer networks for image classification. In particular, we investigate the interplay of architecture and optimization of such dedicated transformers. We make two transformers architecture changes that significantly improve the accuracy of deep transformers. This leads us to produce models whose performance does not saturate early with more depth, for instance we obtain 86.5% top-1 accuracy on Imagenet when training with no external data, we thus attain the current SOTA with less FLOPs and parameters. Moreover, our best model establishes the new state of the art on Imagenet with Reassessed labels and Imagenet-V2 / match frequency, in the setting with no additional training data. We share our code and models.
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/3766457e-8d94-4b85-93af-ad9d7cf092c2)
+
+    
+24. [cct](models/cct.py)
+25. [simple-vit](models/simple_vit.py)
 
 
 
