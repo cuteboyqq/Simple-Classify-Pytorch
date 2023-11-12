@@ -90,15 +90,16 @@ python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/run
 ### Model-History
 [(Back-to-Table)](#table-of-contents)
 
-1. [Cait](#Cait) Author : H Touvron  · 2021 · referenced : 728 
-2. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
-3. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
-4. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
-5. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573
-6. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
-7. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
-8. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
-9. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
+1. [Cait](#Cait) Author : H Touvron  · 2021 · referenced : 728
+2. [Vit](#Vit) Author : A Dosovitskiy  · 2020 · Referenced : 24385
+3. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
+4. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
+5. [EfficientNet](#EfficientNet) Author : M Tan  · 2019 · Referenced : 15999
+6. [MobileNetV2](#MobileNetV2) Author : M Sandler  · 2018 · Referenced : 18573
+7. [MobileNet](#MobileNet) Author : AG Howard  · 2017 · Referenced : 22147
+8. [ShuffleNet](#ShuffleNet) Author : X Zhang  · 2017 · Referenced : 6972
+9. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
+10. [VGG16](#VGG16) Author : K Simonyan  · 2014 · Referenced : 112804
 
 ### Model-Abstract
 #### ResNet
@@ -196,8 +197,9 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
 
     ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/15bd4576-df2f-43e1-93a6-b8db49006415)
 
-    
-21. [Cait](models/cait.py) [Paper](https://arxiv.org/abs/2103.17239) [(Back to table)](#Model-History)
+
+#### Cait
+21. [Network](models/cait.py) [Paper](https://arxiv.org/abs/2103.17239) [(Back to table)](#Model-History)
 
     Author : H Touvron  · 2021 · referenced : 728 
 
