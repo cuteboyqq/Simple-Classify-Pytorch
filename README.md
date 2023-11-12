@@ -90,6 +90,7 @@ python predict.py --data cifar10 --img-size 32 --nc 3 --model [/path/to/your/run
 ### Model-History
 [(Back-to-Table)](#table-of-contents)
 
+1. [Sim-Vit](#Sim-Vit) [Network](models/simple_vit.py) Author : G Li  · 2021 · Referenced : 10 
 1. [Cait](#Cait) [Network](models/cait.py) Author : H Touvron  · 2021 · referenced : 728
 2. [Vit](#Vit) [Network](models/vit.py) Author : A Dosovitskiy  · 2020 · Referenced : 24385
 3. [RepVGG](#RepVGG) [Network](models/repVGG.py) Author : X Ding  · 2021 · Referenced : 1010
@@ -209,7 +210,19 @@ The MobileNetV2 architecture is based on an inverted residual structure where th
 
     
 24. [cct](models/cct.py)
-25. [simple-vit](models/simple_vit.py)
+
+#### Sim-Vit
+26. [simple-vit](models/simple_vit.py) [Paper](https://arxiv.org/abs/2112.13085)
+
+    Author : G Li  · 2021 · Referenced : 10 
+    
+    Although vision Transformers have achieved excellent performance as backbone models in many vision tasks, most of them intend to capture global relations of all tokens in an image or a window, which disrupts the inherent spatial and local correlations between patches in 2D structure. In this paper, we introduce a simple vision Transformer named SimViT, to incorporate spatial structure and local information into the vision Transformers. Specifically, we introduce Multi-head Central Self-Attention(MCSA) instead of conventional Multi-head Self-Attention to capture highly local relations. The introduction of sliding windows facilitates the capture of spatial structure. Meanwhile, SimViT extracts multi-scale hierarchical features from different layers for dense prediction tasks. Extensive experiments show the SimViT is effective and efficient as a general-purpose backbone model for various image processing tasks. Especially, our SimViT-Micro only needs 3.3M parameters to achieve 71.1% top-1 accuracy on ImageNet-1k dataset, which is the smallest size vision Transformer model by now. Our code will be available in this https URL.
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/b3a3d51c-70e9-430f-90c9-66234ff10f3b)
+
+    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/9a9c0371-c37e-4459-a29b-fe8dbd2b21e3)
+
+
 
 
 
