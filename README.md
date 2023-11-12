@@ -27,12 +27,12 @@ you can use various network to train classify model, and l want the train and pr
 
 ### Model-History
 1. [ResNet](#ResNet) Author : K He  · 2015 · Referenced : 188186
-   
 2. [RepVGG](#RepVGG) Author : X Ding  · 2021 · Referenced : 1010
+3. [Res2Net](#Res2Net) Author : SH Gao  · 2019 · Referenced : 1998
 
 ### Model-Abstract
 #### ResNet
-1. [resnet](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#table-of-contents)
+1. [Code](models/resnet.py) [Paper](https://arxiv.org/abs/1512.03385) [(Back to table)](#table-of-contents)
 
     Author : K He  · 2015 · Referenced : 188186 
    
@@ -42,7 +42,7 @@ you can use various network to train classify model, and l want the train and pr
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/f01d0c15-1a97-4965-8c90-0f03d8afced9)
 
 #### RepVGG
-2. [repVGG](models/repVGG.py)  [Paper](https://arxiv.org/abs/2101.03697) [(Back to table)](#table-of-contents)
+2. [Code](models/repVGG.py)  [Paper](https://arxiv.org/abs/2101.03697) [(Back to table)](#table-of-contents)
 
       Author : X Ding  · 2021 · Referenced : 1010
       
@@ -50,6 +50,7 @@ you can use various network to train classify model, and l want the train and pr
    
    ![image](https://github.com/cuteboyqq/Simple-Classify-Pytorch/assets/58428559/cfa08dc5-58f1-4031-b95a-c51cb5983227)
 
+#### Res2Net
 4. [res2net](models/res2net.py) [Paper](https://arxiv.org/abs/1904.01169) [(Back to table)](#table-of-contents)
 
     Author : SH Gao  · 2019 · Referenced : 1998
