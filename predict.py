@@ -97,6 +97,7 @@ def predict():
         os.makedirs("./runs/predict/"+class_dict[i],exist_ok=True)
 
     correct = 0
+    wrong = 0
     total = 0
     lm = 0
     ss = 0
@@ -104,6 +105,7 @@ def predict():
     # acc_dict = {"lanemarking":0,"others":0,"stopsign":0}
     # total_dict = {"lanemarking":0,"others":0,"stopsign":0}
     acc_dict = {"0":0,"1":0}
+    FP_dict = {"0":0,"1":0}
     total_dict = {"0":0,"1":0}
     list_bar = tqdm(predict_img_list)
     with torch.no_grad():
@@ -131,7 +133,10 @@ def predict():
 
             if class_dict[int(pred_cls.cpu().numpy())]==label:
                 correct+=1
-                acc_dict[label] += 1 
+                acc_dict[label] += 1
+            else:
+                wrong+=1
+                FP_dict[label] += 1
             
             total += 1
             acc = float(correct / total)
@@ -143,17 +148,17 @@ def predict():
             shutil.copy(pred_img_path,"./runs/predict/"+str(class_dict[int(pred_cls.cpu().numpy())]))
             #else:
             #    print("max_value<=3.5")
-            bar_str ='GT:{}'.format(label) + '  cor:{}'.format(correct)+ "    to1:{}".format(total) + "     acc:{0:.3f}".format(acc)
+            bar_str ='GT:{}'.format(label) + '  cor:{}'.format(correct)+'  wro:{}'.format(wrong)  +"    to1:{}".format(total) + "     acc:{0:.3f}".format(acc)
             PREFIX = colorstr(bar_str)
             list_bar.desc = f'{PREFIX}'
 
         print("correct count:")
-        print("label                total       TP          MI    acc")
+        print("label                total       TP          FP    acc")
         for num,key in enumerate(acc_dict):
             print("{:15} {:10} {:10} {:10} {:20}".format(class_dict[num],\
                                                         total_dict[key],\
                                                         acc_dict[key],\
-                                                        total_dict[key]-acc_dict[key],\
+                                                        FP_dict[key],\
                                                         float(acc_dict[key]/total_dict[key])))
 
 ## Unable to save images
