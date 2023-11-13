@@ -35,9 +35,10 @@ def get_args():
     parser.add_argument('-imgh','--img-h',type=int,help='image size h',default=64)
 
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='simple-vit')
     parser.add_argument('-mpath','--model-path',help='pretrained model path',\
-                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/resnet_best.pt')
+                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/simple-vit_best.pt')
+    parser.add_argument('-numcls','--num-cls',type=int,help='num of class',default=2)
     return parser.parse_args()
 
 torch.cuda.empty_cache()
