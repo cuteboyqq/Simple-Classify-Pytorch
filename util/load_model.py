@@ -61,13 +61,13 @@ def load_model(opts,nc):
         model = ShuffleNetV2(net_size=0.5)
     elif opts.model=='vit' or opts.model=='Vit' or opts.model=='VIT':
         model = ViT(
-                    image_size = opts.img_size,
-                    patch_size = 16,
+                    image_size = im_size,
+                    patch_size = 32,
                     num_classes = opts.num_cls,
-                    dim = 512,
+                    dim = 1024,
                     depth = 6,
                     heads = 16,
-                    mlp_dim = 1024,
+                    mlp_dim = 2048,
                     dropout = 0.1,
                     emb_dropout = 0.1
                     )
