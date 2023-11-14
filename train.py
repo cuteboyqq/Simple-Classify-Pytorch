@@ -20,16 +20,16 @@ def get_args():
     import argparse
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
-    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/train')
-    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/val')
+    parser.add_argument('-data','--data',help='train data (mnist, cifar10, or custom data directory)',default=r'/home/ali/Projects/datasets/BDD100K_Val_crop/train')
+    parser.add_argument('-datatest','--data-test',help='custom test data)',default=r'/home/ali/Projects/datasets/BDD100K_Val_crop/val')
     parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=64)
     parser.add_argument('-imgw','--img-w',type=int,help='image width',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image height',default=64)
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-numcls','--num-cls',type=int,help='num of classes',default=2)
-    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
-    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=30)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='res2net')
+    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=32)
+    parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=40)
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
@@ -63,6 +63,7 @@ optimizer = optim.SGD(model.parameters(), lr=1e-3, momentum=0.9)
 os.makedirs(r"./runs/train", exist_ok=True)
 
 _lowest_loss = 1000.0
+global_acc = 0.0
 #--------------------------------------------------------------------------------------------
 def train(epoch):
     global _lowest_loss
@@ -95,12 +96,17 @@ def train(epoch):
                       + '      ' + "{}".format(opts.data)
         PREFIX = colorstr(bar_str)
         pbar.desc = f'{PREFIX}'                 
-    if tot_loss < _lowest_loss:
+    # if tot_loss < _lowest_loss:
+    #     _lowest_loss = tot_loss
+    #     model_name =  opts.model + "_best.pt"
+    #     torch.save(model, os.path.join(r"./runs/train",model_name))
+    if epoch==0:
         _lowest_loss = tot_loss
         model_name =  opts.model + "_best.pt"
         torch.save(model, os.path.join(r"./runs/train",model_name))
 #------------------------------------------------------------------------------------------------------------
 def test():
+    global global_acc
     #get the ac with testdataset in each epoch
     #print('Waiting Test...')
     pbar_test = tqdm(test_loader)
@@ -123,7 +129,11 @@ def test():
             bar_str ='{:30}'.format('')+"{0:.3f}".format(acc)
             PREFIX = colorstr(bar_str)
             pbar_test.desc = f'{PREFIX}'
-            
+
+    if global_acc<acc:
+        global_acc=acc
+        model_name =  opts.model + "_best.pt"
+        torch.save(model, os.path.join(r"./runs/train",model_name))
         #print('Test\'s ac is: %.3f%%' % (100 * correct / total))
 if __name__ == "__main__":
     for epoch in range(opts.epoch):
