@@ -5,6 +5,7 @@ Created on Sun Sep 18 11:06:04 2022
 @author: User
 """
 from models.resnet import ResNet,ResBlock
+from models.resnet_antialiased import ResNet_AntiAliased,BasicBlock_2
 from models.repVGG import RepVGG,RepVGGBlock
 from models.res2net import Res2Net,Bottle2neck
 from models.resnext import ResNeXt
@@ -125,4 +126,6 @@ def load_model(opts,nc):
                     emb_dropout = 0.1,
                     layer_dropout = 0.05    # randomly dropout 5% of the layers
                 )
+    elif opts.model=='resnet-antialiased' or opts.model=='resnet-antialias' or opts.model=='resnet-anti':
+        model = ResNet_AntiAliased(BasicBlock_2, [2, 2, 2, 2], filter_size=4, pool_only=True)
     return model
