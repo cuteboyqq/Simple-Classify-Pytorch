@@ -28,16 +28,17 @@ def get_args():
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
     parser.add_argument('-datapredict','--data-predict',help='custom test data)',\
-                        default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/val')
+                        default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/val')#'/home/ali/Projects/datasets/BDD100K_Val_crop/val' #'/home/ali/Projects/datasets/snow_crop_2cls/'
+                        #driver_161_90frame_crop_2cls
     parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=128)
 
     parser.add_argument('-imgw','--img-w',type=int,help='image size w',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image size h',default=64)
 
     parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='simple-vit')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     parser.add_argument('-mpath','--model-path',help='pretrained model path',\
-                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/simple-vit_best.pt')
+                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/CULane/resnet_best.pt')
     parser.add_argument('-numcls','--num-cls',type=int,help='num of class',default=2)
     return parser.parse_args()
 
@@ -145,7 +146,8 @@ def predict():
             #print("correct:{}   total")
             #if int(max_value.cpu().numpy())>=3.5:
             #print("predict result : {}".format(class_dict[int(pred_cls.cpu().numpy())]))
-            shutil.copy(pred_img_path,"./runs/predict/"+str(class_dict[int(pred_cls.cpu().numpy())]))
+            os.makedirs(os.path.join("./runs/predict/",str(label),str(class_dict[int(pred_cls.cpu().numpy())])),exist_ok=True)
+            shutil.copy(pred_img_path,os.path.join("./runs/predict/",str(label),str(class_dict[int(pred_cls.cpu().numpy())])))
             #else:
             #    print("max_value<=3.5")
             bar_str ='GT:{}'.format(label) + '  cor:{}'.format(correct)+'  wro:{}'.format(wrong)  +"    to1:{}".format(total) + "     acc:{0:.3f}".format(acc)
@@ -153,7 +155,7 @@ def predict():
             list_bar.desc = f'{PREFIX}'
 
         print("correct count:")
-        print("label                total       TP          FP    acc")
+        print("label                total       TP          FN    acc")
         for num,key in enumerate(acc_dict):
             print("{:15} {:10} {:10} {:10} {:20}".format(class_dict[num],\
                                                         total_dict[key],\

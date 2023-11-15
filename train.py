@@ -25,11 +25,11 @@ def get_args():
     parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=64)
     parser.add_argument('-imgw','--img-w',type=int,help='image width',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image height',default=64)
-    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
+    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=1)
     parser.add_argument('-numcls','--num-cls',type=int,help='num of classes',default=2)
-    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=128)
+    parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=40)
-    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='vit')
+    parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     return parser.parse_args()
 
 torch.cuda.empty_cache()
@@ -134,7 +134,7 @@ def test():
     #     global_acc=acc
     #     model_name =  opts.model + "_best.pt"
     #     torch.save(model, os.path.join(r"./runs/train",model_name))
-        #print('Test\'s ac is: %.3f%%' % (100 * correct / total))
+    #     print('Test\'s ac is: %.3f%%' % (100 * correct / total))
 if __name__ == "__main__":
     for epoch in range(opts.epoch):
         train(epoch)
