@@ -44,9 +44,11 @@ def load_data(opts):
             size = (opts.img_h,opts.img_w)
         else:
             size = (opts.img_size,opts.img_size)
-        train_data = torchvision.datasets.ImageFolder(opts.data,
+        if opts.nc==1:
+            train_data = torchvision.datasets.ImageFolder(opts.data,
                                                     transform=transforms.Compose([
                                                         transforms.Resize(size),
+                                                        transforms.Grayscale(num_output_channels=1),
                                                         #transforms.RandomHorizontalFlip(),
                                                         #transforms.Scale(64),
                                                         transforms.CenterCrop(size),
@@ -54,13 +56,37 @@ def load_data(opts):
                                                         transforms.ToTensor()
                                                         ])
                                                     )
-        test_data = torchvision.datasets.ImageFolder(opts.data_test,
+        else:
+            train_data = torchvision.datasets.ImageFolder(opts.data,
+                                                        transform=transforms.Compose([
+                                                            transforms.Resize(size),
+                                                            #transforms.RandomHorizontalFlip(),
+                                                            #transforms.Scale(64),
+                                                            transforms.CenterCrop(size),
+                                                        
+                                                            transforms.ToTensor()
+                                                            ])
+                                                        )
+        if opts.nc==1:
+            test_data = torchvision.datasets.ImageFolder(opts.data_test,
+                                                    transform=transforms.Compose([
+                                                        transforms.Resize(size),
+                                                        transforms.Grayscale(num_output_channels=1),
+                                                        #transforms.RandomHorizontalFlip(),
+                                                        #transforms.Scale(64),
+                                                        transforms.CenterCrop(size),
+                                                        
+                                                        transforms.ToTensor()
+                                                        ])
+                                                    )
+        else:
+            test_data = torchvision.datasets.ImageFolder(opts.data_test,
                                                     transform=transforms.Compose([
                                                         transforms.Resize(size),
                                                         #transforms.RandomHorizontalFlip(),
                                                         #transforms.Scale(64),
                                                         transforms.CenterCrop(size),
-                                                     
+                                                        
                                                         transforms.ToTensor()
                                                         ])
                                                     )
