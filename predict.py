@@ -28,17 +28,17 @@ def get_args():
     parser = argparse.ArgumentParser()
     #'/home/ali/datasets/train_video/NewYork_train/train/images'
     parser.add_argument('-datapredict','--data-predict',help='custom test data)',\
-                        default=r'/home/ali/Projects/datasets/CULane/driver_161_90frame_crop_2cls/val')#'/home/ali/Projects/datasets/BDD100K_Val_crop/val' #'/home/ali/Projects/datasets/snow_crop_2cls/'
+                        default=r'/home/ali/Projects/datasets/BDD100K_Val_crop/val')#'/home/ali/Projects/datasets/BDD100K_Val_crop/val' #'/home/ali/Projects/datasets/snow_crop_2cls/'
                         #driver_161_90frame_crop_2cls
-    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=128)
+    parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=64)
 
     parser.add_argument('-imgw','--img-w',type=int,help='image size w',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image size h',default=64)
 
-    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
+    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=1)
     parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     parser.add_argument('-mpath','--model-path',help='pretrained model path',\
-                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/CULane/resnet_best.pt')
+                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/resnet_best.pt')
     parser.add_argument('-numcls','--num-cls',type=int,help='num of class',default=2)
     return parser.parse_args()
 
@@ -69,7 +69,17 @@ if opts.img_h is not None and opts.img_w is not None:
     size = (opts.img_h,opts.img_w)
 else:
     size = opts.img_size
-pre_process = transforms.Compose([
+if opts.nc==1:
+    pre_process = transforms.Compose([
+                    transforms.Resize(size),
+                    #transforms.RandomHorizontalFlip(),
+                    transforms.Grayscale(num_output_channels=1),
+                    transforms.CenterCrop(size),
+                    transforms.ToTensor()
+                    #normalize
+                    ])
+else:
+    pre_process = transforms.Compose([
                 transforms.Resize(size),
                 #transforms.RandomHorizontalFlip(),
                 transforms.CenterCrop(size),
