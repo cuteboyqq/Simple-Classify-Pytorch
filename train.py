@@ -25,7 +25,7 @@ def get_args():
     parser.add_argument('-imgsize','--img-size',type=int,help='image size',default=64)
     parser.add_argument('-imgw','--img-w',type=int,help='image width',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image height',default=64)
-    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=1)
+    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-numcls','--num-cls',type=int,help='num of classes',default=2)
     parser.add_argument('-batchsize','--batch-size',type=int,help='batch-size',default=64)
     parser.add_argument('-epoch','--epoch',type=int,help='num of epochs',default=40)
@@ -98,12 +98,12 @@ def train(epoch):
         pbar.desc = f'{PREFIX}'                 
     if tot_loss < _lowest_loss:
         _lowest_loss = tot_loss
-        model_name =  opts.model + "_best.pt"
+        model_name =  opts.model + "_loss_best.pt"
         torch.save(model, os.path.join(r"./runs/train",model_name))
-    # if epoch==0:
-    #     _lowest_loss = tot_loss
-    #     model_name =  opts.model + "_best.pt"
-    #     torch.save(model, os.path.join(r"./runs/train",model_name))
+    if epoch==0:
+        _lowest_loss = tot_loss
+        model_name =  opts.model + "_val_best.pt"
+        torch.save(model, os.path.join(r"./runs/train",model_name))
 #------------------------------------------------------------------------------------------------------------
 def test():
     global global_acc
@@ -130,11 +130,11 @@ def test():
             PREFIX = colorstr(bar_str)
             pbar_test.desc = f'{PREFIX}'
 
-    # if global_acc<acc:
-    #     global_acc=acc
-    #     model_name =  opts.model + "_best.pt"
-    #     torch.save(model, os.path.join(r"./runs/train",model_name))
-    #     print('Test\'s ac is: %.3f%%' % (100 * correct / total))
+    if global_acc<acc:
+        global_acc=acc
+        model_name =  opts.model + "_val_best.pt"
+        torch.save(model, os.path.join(r"./runs/train",model_name))
+        print('Test\'s ac is: %.3f%%' % (100 * correct / total))
 if __name__ == "__main__":
     for epoch in range(opts.epoch):
         train(epoch)

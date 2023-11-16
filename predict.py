@@ -35,10 +35,10 @@ def get_args():
     parser.add_argument('-imgw','--img-w',type=int,help='image size w',default=640)
     parser.add_argument('-imgh','--img-h',type=int,help='image size h',default=64)
 
-    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=1)
+    parser.add_argument('-nc','--nc',type=int,help='num of channels',default=3)
     parser.add_argument('-model','--model',help='resnet,VGG16,repvgg,res2net',default='resnet')
     parser.add_argument('-mpath','--model-path',help='pretrained model path',\
-                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/resnet_best.pt')
+                        default=r'/home/ali/Projects/GitHub_Code/ali/Simple-Classify-Pytorch/runs/train/BDD100K/resnet_best.pt')
     parser.add_argument('-numcls','--num-cls',type=int,help='num of class',default=2)
     return parser.parse_args()
 
@@ -101,6 +101,7 @@ def predict():
     #get the ac with testdataset in each epoch
     #print('Waiting Test...')
     #device = torch.device('cuda' if torch.cuda.is_available() else 'cpu' )
+    print(f"predict dataset : {opts.data_predict}")
     predict_img_list = glob.glob(os.path.join(opts.data_predict,"**/*.jpg"))
     class_dict={0:"0",1:"1"}
     os.makedirs("./runs/predict",exist_ok=True)
